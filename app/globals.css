@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: #08080a;
+  color: #ededf0;
+}
+
+/* Subtle grain + radial glow backdrop */
+.bg-aura {
+  background:
+    radial-gradient(60rem 40rem at 50% -10%, rgba(124, 156, 255, 0.10), transparent 60%),
+    radial-gradient(40rem 30rem at 100% 10%, rgba(124, 156, 255, 0.05), transparent 55%),
+    #08080a;
+}
+
+/* Hairline divider */
+.hairline {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Selection */
+::selection {
+  background: rgba(124, 156, 255, 0.28);
+  color: #fff;
+}
+
+/* Thin custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 999px;
+  border: 3px solid #08080a;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(180deg, #ffffff 0%, #b9bccb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(90deg, #a9bbff 0%, #7c9cff 50%, #8fd6c8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Eyebrow label */
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7c9cff;
+  font-weight: 500;
+}
+
+/* Card surface */
+.surface {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+}
+
+.surface-hover {
+  transition: border-color 0.4s ease, background 0.4s ease, transform 0.4s ease;
+}
+.surface-hover:hover {
+  border-color: rgba(124, 156, 255, 0.35);
+  background: linear-gradient(180deg, rgba(124, 156, 255, 0.06), rgba(255, 255, 255, 0.01));
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---- VUE mockup (editorial light surface, brand-accurate) ---- */
+.vue-serif {
+  font-family: var(--font-serif), Georgia, serif;
+}
