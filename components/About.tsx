@@ -44,15 +44,15 @@ export default function About() {
           <div>
             <Reveal>
               <h2 className="max-w-3xl text-balance text-[clamp(1.8rem,4vw,3rem)] font-semibold leading-[1.08] tracking-[-0.02em] text-gradient">
-                I&apos;m not transitioning into design engineering. I&apos;ve
-                been doing the whole job all along.
+                I design the product, build it end to end, and ground every
+                decision in how people actually use it.
               </h2>
             </Reveal>
 
             <div className="mt-8 max-w-prose space-y-5 text-base leading-relaxed text-white/60 sm:text-[1.05rem]">
               <Reveal delay={0.05}>
                 <p>
-                  My foundation is human factors psychology — the study of how
+                  My foundation is human factors psychology, the study of how
                   people actually perceive, decide, and act under load. It
                   taught me to treat an interface as a system the user is part
                   of, not a surface to decorate. That lens shapes everything I

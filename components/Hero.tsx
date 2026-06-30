@@ -66,8 +66,8 @@ export default function Hero() {
           variants={item}
           className="mt-5 text-[clamp(1.1rem,2.6vw,1.65rem)] font-medium tracking-tight text-white/55"
         >
-          <span className="text-gradient-accent">Flight Test Engineer</span>
-          {" "}who designs and builds products on the side.
+          <span className="text-gradient-accent">Design engineer</span>
+          {" "}who designs the product and ships the code.
         </motion.p>
 
         <motion.p
@@ -91,12 +91,11 @@ export default function Hero() {
 
         <motion.div
           variants={item}
-          className="mt-9 flex flex-wrap items-center gap-4"
+          className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4"
         >
           <a
             href="#vue"
-            className="group inline-flex items-center gap-2.5 bg-white px-6 py-3 text-sm font-semibold text-ink tracking-tight transition-all hover:bg-accent hover:text-white"
-            style={{ clipPath: "polygon(0 0, 100% 0, 96% 100%, 4% 100%)" }}
+            className="group inline-flex items-center gap-2.5 rounded-full bg-white px-6 py-3 text-sm font-semibold text-ink tracking-tight transition-all hover:bg-accent hover:text-white"
           >
             See the work
             <span className="transition-transform group-hover:translate-x-1">
@@ -131,10 +130,10 @@ export default function Hero() {
           variants={item}
           className="mt-14 max-w-prose text-sm text-white/35"
         >
-          I started with a problem, had an idea, then designed my own component
-          system in Figma. Used Figma Make to bring it to life, and Claude for
-          guidance and implementation across the entire VUE project: front end,
-          back end, and B2B. This portfolio is built the same way.
+          Every project starts the same way: a real problem, research into how
+          people actually use it, a component system designed from scratch, then
+          engineered and shipped to production. This portfolio is built the same
+          way.
         </motion.p>
       </motion.div>
 

@@ -1,6 +1,6 @@
 /* A brand-accurate, code-built recreation of the live VUE feed (vueniverse.com).
    Real product imagery, VUE's actual design tokens (cream / deep teal /
-   Cormorant-style serif). Rendered in CSS — no screenshot. */
+   Cormorant-style serif). Rendered in CSS, no screenshot. */
 
 const products = [
   { img: "/assets/vue/p2.jpg", name: "Embroidered Drawstring Shorts", price: "$90" },
@@ -46,7 +46,7 @@ export default function VueMockup() {
         </div>
       </div>
 
-      {/* VUE app — light editorial surface */}
+      {/* VUE app, light editorial surface */}
       <div className="bg-vue-cream text-vue-char">
         {/* top teal bar */}
         <div className="flex items-center justify-between bg-vue-teal px-5 py-2.5 text-white">

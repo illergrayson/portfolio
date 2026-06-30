@@ -20,9 +20,9 @@ const siteUrl = "https://grayson-iller.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Grayson Iller — Design Engineer",
+  title: "Grayson Iller · Design Engineer",
   description:
-    "Design engineer working at the seam of product design and front-end systems. Human factors background, systems experience at Skydio, and VUE — a fashion drop platform designed and built solo.",
+    "Design engineer working at the seam of product design and front-end systems. Human factors background, systems experience at Skydio, and VUE, a fashion drop platform designed and built solo.",
   keywords: [
     "Grayson Iller",
     "Design Engineer",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Grayson Iller" }],
   openGraph: {
-    title: "Grayson Iller — Design Engineer",
+    title: "Grayson Iller · Design Engineer",
     description:
       "Design engineer at the seam of product design and front-end systems. Creator of VUE (vueniverse.com).",
     url: siteUrl,
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grayson Iller — Design Engineer",
+    title: "Grayson Iller · Design Engineer",
     description:
       "Design engineer at the seam of product design and front-end systems. Creator of VUE.",
   },

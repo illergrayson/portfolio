@@ -107,7 +107,7 @@ export default function CaseStudyVue() {
               <p className="mt-4 text-[1.05rem] leading-relaxed text-white/70">
                 Fashion drops are scattered across hundreds of individual brand
                 sites. There&apos;s no single place to see what dropped today
-                across the brands you actually care about — so shoppers tab-hop
+                across the brands you actually care about, so shoppers tab-hop
                 between a dozen newsletters and Instagrams, or miss launches
                 entirely.
               </p>
@@ -122,7 +122,7 @@ export default function CaseStudyVue() {
                 One feed. Follow the brands you love and VUE surfaces every new
                 arrival the day it drops, newest first. Save items natively or
                 route them to the wishlist you already use. A drop calendar for
-                the brands you love — no tab-hopping, no missed launches.
+                the brands you love. No tab-hopping, no missed launches.
               </p>
             </div>
           </Reveal>
