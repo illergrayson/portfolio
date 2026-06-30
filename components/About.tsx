@@ -3,23 +3,23 @@ import Reveal from "./Reveal";
 const facts = [
   {
     k: "Education",
-    v: "B.S. Human Factors Psychology (HCI focus), Minor in Aerospace Physiology — Embry-Riddle Aeronautical University",
+    v: "B.S. Human Factors Engineering in Aerospace Physiology, Embry-Riddle Aeronautical University (2019–2023)",
   },
   {
     k: "Now",
-    v: "Device Platform Lead, Controller UI/UX — Skydio (since 2023)",
+    v: "Flight Test Engineer Lead, Device Platform, Skydio (3+ years)",
   },
   {
     k: "Building",
-    v: "VUE — vueniverse.com, a fashion drop platform designed and built solo",
+    v: "VUE (vueniverse.com): a fashion drop-tracking platform I designed and built solo, end to end",
   },
   {
     k: "Published",
-    v: "Pilot-in-the-loop technology for moon landings (IAF/IAA, 2022) · Spatial disorientation & mild hypoxia in flight (2021)",
+    v: "Pilot-in-the-Loop Technology for Moon Landings (Dr. John French, Feb 2023) · 73rd International Astronautical Congress, IAF/IAA Space Life Sciences Symposium (2022) · The Link Between Spatial Disorientation in Flight and Mild Hypoxia (Embry-Riddle SRS, Nov 2021)",
   },
   {
     k: "Also",
-    v: "NCAA Division I athlete",
+    v: "NCAA Division II athlete: Women’s Cross Country & Track and Field. FAA-certified UAV pilot. PADI Open Water Diver.",
   },
 ];
 
@@ -55,8 +55,8 @@ export default function About() {
                   My foundation is human factors psychology — the study of how
                   people actually perceive, decide, and act under load. It
                   taught me to treat an interface as a system the user is part
-                  of, not a surface to decorate. That lens runs through
-                  everything I make.
+                  of, not a surface to decorate. That lens shapes everything I
+                  make.
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
@@ -64,22 +64,22 @@ export default function About() {
                   At <span className="text-white/85">Skydio</span> I work across
                   drone platforms on controller UI/UX, where the &ldquo;test
                   engineering&rdquo; label undersells the work: I restructure how
-                  complex systems are modeled, documented, and experienced —
-                  mapping operator workflows, exposing where the UI and the
-                  system disagree, and embedding with the design team during
+                  complex systems are modeled, documented, and experienced.
+                  I map operator workflows, expose where the UI and the
+                  system disagree, and embed with the design team during
                   hardware bring-up.
                 </p>
               </Reveal>
               <Reveal delay={0.15}>
                 <p>
                   Then I built <span className="text-white/85">VUE</span> to
-                  close the loop. One person, end to end: the product strategy,
+                  close the loop. One person, end to end. The product strategy,
                   the component system, the conversion UX, the database, the
                   scrapers, the deploys. It tracks fashion drops from{" "}
                   <span className="text-white/85">100+ brands</span> into a
                   single feed, and it&apos;s live in production with real users.
                   Design taste and engineering depth aren&apos;t two skills I
-                  toggle between — they&apos;re one practice.
+                  toggle between. They&apos;re one practice.
                 </p>
               </Reveal>
             </div>

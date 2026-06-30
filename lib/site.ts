@@ -1,11 +1,11 @@
 export const site = {
   name: "Grayson Iller",
   title: "Design Engineer",
-  location: "Redwood City, CA",
+  location: "San Mateo, CA",
   email: "Graysoniller@outlook.com",
   links: {
-    linkedin: "https://linkedin.com/in/graysoniller",
-    linkedinLabel: "linkedin.com/in/graysoniller",
+    linkedin: "https://linkedin.com/in/grayson-iller-a119b2202",
+    linkedinLabel: "linkedin.com/in/grayson-iller",
     vue: "https://vueniverse.com",
     vueLabel: "vueniverse.com",
     email: "mailto:Graysoniller@outlook.com",

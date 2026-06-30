@@ -51,7 +51,7 @@ export default function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
             </span>
-            Open to design engineering roles
+            Open to new opportunities
           </span>
         </motion.div>
 
@@ -64,22 +64,18 @@ export default function Hero() {
 
         <motion.p
           variants={item}
-          className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-[clamp(1.1rem,2.6vw,1.65rem)] font-medium tracking-tight text-white/85"
+          className="mt-5 text-[clamp(1.1rem,2.6vw,1.65rem)] font-medium tracking-tight text-white/55"
         >
-          <span className="text-gradient-accent">Design Engineer</span>
-          <span className="text-white/25">/</span>
-          <span className="text-white/55">
-            I design the product and ship the code.
-          </span>
+          <span className="text-gradient-accent">Flight Test Engineer</span>
+          {" "}who designs and builds products on the side.
         </motion.p>
 
         <motion.p
           variants={item}
           className="mt-7 max-w-prose text-base leading-relaxed text-white/55 sm:text-lg"
         >
-          I work at the seam where product design meets front-end systems —
-          turning ambiguous problems into interfaces that feel inevitable. A
-          human factors background, systems experience at Skydio, and{" "}
+          By day I lead device platform testing at Skydio, validating controller
+          UI/UX and embedded middleware on autonomous drones. By night I built{" "}
           <a
             href={site.links.vue}
             target="_blank"
@@ -87,20 +83,23 @@ export default function Hero() {
             className="text-white/85 underline decoration-white/25 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent/60"
           >
             VUE
-          </a>{" "}
-          — a fashion drop platform I designed and built end to end.
+          </a>
+          , a fashion drop-tracking platform with 100+ brands, from a blank
+          Figma file to production. Human factors degree, systems engineering
+          experience, and a side project that proves I can do both.
         </motion.p>
 
         <motion.div
           variants={item}
-          className="mt-9 flex flex-wrap items-center gap-3"
+          className="mt-9 flex flex-wrap items-center gap-4"
         >
           <a
             href="#vue"
-            className="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
+            className="group inline-flex items-center gap-2.5 bg-white px-6 py-3 text-sm font-semibold text-ink tracking-tight transition-all hover:bg-accent hover:text-white"
+            style={{ clipPath: "polygon(0 0, 100% 0, 96% 100%, 4% 100%)" }}
           >
-            View work
-            <span className="transition-transform group-hover:translate-x-0.5">
+            See the work
+            <span className="transition-transform group-hover:translate-x-1">
               →
             </span>
           </a>
@@ -108,13 +107,13 @@ export default function Hero() {
             href={site.links.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.02] px-5 py-2.5 text-sm text-white/75 transition-all hover:border-accent/40 hover:text-white"
+            className="inline-flex items-center gap-2 border-b border-white/20 pb-0.5 text-sm text-white/60 transition-colors hover:border-accent hover:text-white"
           >
-            LinkedIn
+            LinkedIn ↗
           </a>
           <a
             href={site.links.email}
-            className="inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.02] px-5 py-2.5 text-sm text-white/75 transition-all hover:border-accent/40 hover:text-white"
+            className="inline-flex items-center gap-2 border-b border-white/20 pb-0.5 text-sm text-white/60 transition-colors hover:border-accent hover:text-white"
           >
             Email
           </a>
@@ -122,9 +121,9 @@ export default function Hero() {
             href={site.links.vue}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.02] px-5 py-2.5 text-sm text-white/75 transition-all hover:border-accent/40 hover:text-white"
+            className="inline-flex items-center gap-2 border-b border-white/20 pb-0.5 text-sm text-white/60 transition-colors hover:border-accent hover:text-white"
           >
-            {site.links.vueLabel}
+            {site.links.vueLabel} ↗
           </a>
         </motion.div>
 
@@ -132,8 +131,10 @@ export default function Hero() {
           variants={item}
           className="mt-14 max-w-prose text-sm text-white/35"
         >
-          This site is the portfolio and the proof — designed and coded from
-          scratch in Next.js, TypeScript, and Tailwind.
+          I started with a problem, had an idea, then designed my own component
+          system in Figma. Used Figma Make to bring it to life, and Claude for
+          guidance and implementation across the entire VUE project: front end,
+          back end, and B2B. This portfolio is built the same way.
         </motion.p>
       </motion.div>
 

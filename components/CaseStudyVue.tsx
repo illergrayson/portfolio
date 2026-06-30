@@ -13,17 +13,17 @@ const decisions = [
   {
     no: "01",
     title: "A component system with taste built in",
-    body: "I built the UI on Radix primitives and shadcn for accessible, unstyled foundations, then layered an editorial design system on top — a Cormorant-and-Inter type pairing, a warm cream-and-deep-teal palette, glassmorphic surfaces. Accessibility from the primitives, point of view from the design language.",
+    body: "I built the UI on Radix primitives and shadcn for accessible, unstyled foundations, then layered an editorial design system on top. A Cormorant-and-Inter type pairing, a warm cream-and-deep-teal palette, glassmorphic surfaces. Accessibility from the primitives, point of view from the design language.",
   },
   {
     no: "02",
     title: "Conversion UX through intent-based auth gating",
-    body: "Early on, a login wall sat at the front door and killed acquisition. I reframed it to the brand-site model: anyone browses the full feed freely, and auth is requested only at the moment of intent — follow a brand, save an item. The pending action re-runs the instant you sign in, so you never lose your place.",
+    body: "Early on, a login wall sat at the front door and killed acquisition. I reframed it to the brand-site model: anyone browses the full feed freely, and auth is requested only at the moment of intent (follow a brand, save an item). The pending action re-runs the instant you sign in, so you never lose your place.",
   },
   {
     no: "03",
     title: "Information architecture for 100+ brands",
-    body: "With hundreds of brands dropping daily, ordering is the product. The feed is recency-first — the brand with the freshest drop rises to the top — wrapped in flow-based journeys: Daily Drops, per-brand hubs, a Discover directory, and a Wishlist. A 14-day product lifecycle keeps the feed honest about what's actually new.",
+    body: "With hundreds of brands dropping daily, ordering is the product. The feed is recency-first: the brand with the freshest drop rises to the top. Wrapped in flow-based journeys (Daily Drops, per-brand hubs, a Discover directory, and a Wishlist), a 14-day product lifecycle keeps the feed honest about what's actually new.",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function CaseStudyVue() {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <Reveal>
-              <p className="eyebrow">Case Study 01 — Product, design &amp; engineering</p>
+              <p className="eyebrow">Case Study 01: Product, Design &amp; Engineering</p>
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="mt-4 text-[clamp(2.2rem,5vw,3.6rem)] font-semibold leading-none tracking-[-0.03em] text-gradient">
@@ -53,7 +53,7 @@ export default function CaseStudyVue() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-3 max-w-xl text-lg text-white/55">
-                A fashion drop-tracking platform — designed, built, and shipped
+                A fashion drop-tracking platform designed, built, and shipped
                 solo. Every new arrival from the brands you follow, in one feed.
               </p>
             </Reveal>
@@ -169,9 +169,9 @@ export default function CaseStudyVue() {
           </Reveal>
           <Reveal delay={0.08}>
             <p className="text-[1.02rem] leading-relaxed text-white/60">
-              VUE runs a dual-scraper architecture — cloud edge functions for
+              VUE runs a dual-scraper architecture: cloud edge functions for
               standard storefronts and a local residential pipeline for
-              anti-bot-protected brands — writing into a Supabase Postgres
+              anti-bot-protected brands, all writing into a Supabase Postgres
               database with row-level security. On top sits an affiliate redirect
               layer and an SEO prerender pipeline that puts fully-rendered HTML in
               front of crawlers, landing a 97/98 Lighthouse score. The whole
