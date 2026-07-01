@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import CaseStudyVue from "@/components/CaseStudyVue";
+import CaseStudyZephyr from "@/components/CaseStudyZephyr";
 import CaseStudySkydio from "@/components/CaseStudySkydio";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -39,6 +40,7 @@ export default function Home() {
         <Hero />
         <About />
         <CaseStudyVue />
+        <CaseStudyZephyr />
         <CaseStudySkydio />
         <Contact />
       </main>

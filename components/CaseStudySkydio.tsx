@@ -28,7 +28,7 @@ export default function CaseStudySkydio() {
     <section id="skydio" className="scroll-mt-24 border-t border-line px-6 py-28">
       <div className="mx-auto max-w-content">
         <Reveal>
-          <p className="eyebrow">Case Study 02: Systems Thinking &amp; Design Impact</p>
+          <p className="eyebrow">Case Study 03: Systems Thinking &amp; Design Impact</p>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="mt-4 text-[clamp(2.2rem,5vw,3.6rem)] font-semibold leading-none tracking-[-0.03em] text-gradient">
