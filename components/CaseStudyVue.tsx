@@ -1,6 +1,71 @@
 import Reveal from "./Reveal";
-import BrowserFrame from "./BrowserFrame";
+import PhoneFrame from "./PhoneFrame";
 import { site } from "@/lib/site";
+
+const contributions = [
+  {
+    no: "01",
+    tag: "Product design",
+    title: "Designed a personalized feed experience",
+    body: "The feed is the product. Anonymous visitors see every brand's newest arrivals; the moment you follow the labels you actually care about, the feed collapses to just those drops — grouped by brand, newest first, with real names and real prices pulled straight from each storefront. I designed the whole flow in Figma and shipped it in React.",
+    points: [
+      "Follow to personalize — anonymous sees everything, followed brands float to the top.",
+      "Real products, real prices, direct brand links. Nothing mocked, nothing stale.",
+      "Save anywhere: the native VUE wishlist, or route a piece to Pinterest, ShopMy, or LTK.",
+    ],
+    shots: [
+      {
+        src: "/vue-mobile-feed.png",
+        alt: "The VUE feed on mobile: New Arrivals, dated, with brand sections and real product cards.",
+      },
+      {
+        src: "/vue-mobile-feed-cards.png",
+        alt: "The feed scrolled to show the consistent product-card rhythm across brands.",
+      },
+    ],
+    caption: "One feed, grouped by brand — a single card rhythm across every label.",
+  },
+  {
+    no: "02",
+    tag: "Data architecture",
+    title: "Built a system that scales itself",
+    body: "Behind the feed, 100+ scrapers run on six-hour intervals, keeping roughly 23.5K products live and current. It launched tracking 28 brands; adding the next one is now a config entry, not an engineering project. A dual pipeline — Deno and Playwright on Supabase Edge Functions — normalizes a hundred different catalog shapes (inconsistent image ratios, names from “Ryder Pintuck Shorts” to bare SKUs, prices buried in shifting markup) into the one card shape the feed renders. The hard part was never scraping. It was designing a system where the hundredth brand costs the same as the second.",
+    points: [
+      "100+ brands, ~23.5K products, refreshed every 6 hours — automated end to end, scrape to feed.",
+      "Dual pipeline: Deno + Playwright on Supabase Edge Functions.",
+      "Onboarding a brand is a config entry, not a rebuild — the calendar grows itself.",
+    ],
+    shots: [
+      {
+        src: "/vue-mobile-feed-scale.png",
+        alt: "The feed's weekly roll-up: dozens of brands with live new-style counts.",
+      },
+      {
+        src: "/vue-mobile-brands.png",
+        alt: "The fashion drop calendar: 100+ brands organized by tier in one directory.",
+      },
+    ],
+    caption: "Live style counts and a tiered drop calendar — the surface of a self-refreshing pipeline.",
+  },
+  {
+    no: "03",
+    tag: "Interaction design",
+    title: "Made mobile feel native",
+    body: "VUE is mobile-first. Every surface is designed for a thumb first and a desktop second — a single-column feed with a consistent card cadence, an editorial type system that lets a hundred brands scan cleanly in one scroll, and a layout that reflows into a directory and multi-column grid on larger screens. It reads like a native shopping app, not a website squeezed onto a phone.",
+    points: [
+      "Mobile-first single column, thumb-scaled cards and tap targets.",
+      "One typographic system normalizes 100+ brands into a scannable cadence.",
+      "Responsive by design — the phone feed reflows into a desktop directory.",
+    ],
+    shots: [
+      {
+        src: "/vue-mobile-landing.png",
+        alt: "The VUE landing on mobile: Every new drop, one feed, with a live product carousel.",
+      },
+    ],
+    caption: "The front door, built for the phone first.",
+  },
+];
 
 export default function CaseStudyVue() {
   return (
@@ -19,8 +84,9 @@ export default function CaseStudyVue() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink/55">
-                Every new arrival from the brands you follow, in one feed.
-                Designed, built, and shipped solo, live at {site.links.vueLabel}.
+                A fashion-intelligence platform I designed in Figma and shipped
+                in code. Solo. It&apos;s live, it&apos;s monetized, and people
+                use it.
               </p>
             </Reveal>
           </div>
@@ -39,21 +105,9 @@ export default function CaseStudyVue() {
           </Reveal>
         </div>
 
-        {/* LEAD WITH THE PRODUCT */}
-        <Reveal delay={0.1} className="mt-12">
-          <BrowserFrame
-            src="/vue-feed.png"
-            alt="The VUE feed: the day's drop up top, then every new arrival grouped by brand, newest first."
-            priority
-          />
-          <p className="mt-4 text-center text-[13px] text-ink/35">
-            The feed. One place for every new drop across the brands you follow.
-          </p>
-        </Reveal>
-
-        {/* scale */}
+        {/* scale line */}
         <Reveal delay={0.05}>
-          <p className="mt-9 text-center text-[13px] tracking-wide text-ink/40">
+          <p className="mt-8 text-[13px] tracking-wide text-ink/40">
             100+ brands{" "}
             <span className="px-1.5 text-ink/20">&middot;</span> 23.5K+ products
             tracked <span className="px-1.5 text-ink/20">&middot;</span> refreshed
@@ -61,76 +115,74 @@ export default function CaseStudyVue() {
           </p>
         </Reveal>
 
-        {/* deep dive */}
-        <div className="mt-24 grid gap-10 sm:grid-cols-[0.85fr_1.15fr] sm:gap-14">
-          <Reveal>
-            <div className="sm:sticky sm:top-28 sm:self-start">
-              <p className="eyebrow">The hard part</p>
-              <h3 className="mt-4 text-[clamp(1.5rem,3vw,2rem)] font-semibold leading-tight tracking-[-0.02em] text-ink">
-                One feed, a hundred different data shapes
-              </h3>
-            </div>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <div className="space-y-5 text-[1.05rem] leading-relaxed text-ink/55">
-              <p>
-                Every brand publishes its catalog its own way. Image ratios are
-                inconsistent, product names range from &ldquo;Ryder Pintuck
-                Shorts&rdquo; to bare SKU strings, and prices sit in markup that
-                shifts from one storefront to the next. None of it arrives ready
-                to display next to anything else.
-              </p>
-              <p>
-                The design system normalizes all of it into a single rhythm: one
-                card shape, one typographic hierarchy, one scannable cadence, so
-                a drop from Anthropologie reads cleanly beside one from Zara. The
-                real constraint was doing that without flattening the brands into
-                sameness. Each keeps its name, its imagery, its point of view,
-                while the structure around it stays consistent enough to scan a
-                hundred of them in a single scroll.
-              </p>
-              <p className="text-ink/75">
-                That consistency is the product. It is a design decision and an
-                engineering one at the same time.
-              </p>
-            </div>
-          </Reveal>
-        </div>
+        {/* contributions */}
+        <div className="mt-20 space-y-24 sm:space-y-32">
+          {contributions.map((c, i) => {
+            const phonesRight = i % 2 === 0;
+            return (
+              <Reveal key={c.no}>
+                <div className="grid items-center gap-12 sm:grid-cols-2 sm:gap-16">
+                  {/* text */}
+                  <div className={phonesRight ? "sm:order-1" : "sm:order-2"}>
+                    <div className="flex items-center gap-4">
+                      <span className="font-serif text-3xl text-accent/70">
+                        {c.no}
+                      </span>
+                      <span className="inline-block rounded-full border border-line bg-[#FAF8F5] px-2.5 py-1 text-[11px] uppercase tracking-[0.14em] text-ink/45">
+                        {c.tag}
+                      </span>
+                    </div>
+                    <h3 className="mt-5 text-[clamp(1.4rem,3vw,1.9rem)] font-semibold leading-tight tracking-[-0.02em] text-ink">
+                      {c.title}
+                    </h3>
+                    <p className="mt-4 text-[1.02rem] leading-relaxed text-ink/55">
+                      {c.body}
+                    </p>
+                    <ul className="mt-6 space-y-2.5">
+                      {c.points.map((p) => (
+                        <li
+                          key={p}
+                          className="flex gap-2.5 text-[0.95rem] leading-relaxed text-ink/55"
+                        >
+                          <span className="mt-[0.55rem] h-1 w-1 shrink-0 rounded-full bg-accent/70" />
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-        {/* two more surfaces */}
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 sm:items-start">
-          <Reveal delay={0.06}>
-            <BrowserFrame
-              src="/vue-landing.png"
-              alt="The VUE landing page: Every new drop, one feed, above a preview grid of normalized product cards."
-            />
-            <p className="mt-3 text-[12px] text-ink/30">
-              The front door: one normalized grid, many sources.
-            </p>
-          </Reveal>
-          <Reveal delay={0.14} className="sm:mt-16">
-            <BrowserFrame
-              src="/vue-brands.png"
-              alt="The VUE brand directory: a fashion drop calendar organized by tier across 100+ brands."
-            />
-            <p className="mt-3 text-[12px] text-ink/30">
-              The drop calendar: 100+ brands, one directory.
-            </p>
-          </Reveal>
+                  {/* phones */}
+                  <div className={phonesRight ? "sm:order-2" : "sm:order-1"}>
+                    {c.shots.length > 1 ? (
+                      <div className="flex justify-center gap-4 sm:gap-5">
+                        <PhoneFrame
+                          src={c.shots[0].src}
+                          alt={c.shots[0].alt}
+                          priority={i === 0}
+                          className="max-w-[195px]"
+                        />
+                        <PhoneFrame
+                          src={c.shots[1].src}
+                          alt={c.shots[1].alt}
+                          className="mt-10 max-w-[195px] sm:mt-14"
+                        />
+                      </div>
+                    ) : (
+                      <PhoneFrame
+                        src={c.shots[0].src}
+                        alt={c.shots[0].alt}
+                        className="mx-auto max-w-[258px]"
+                      />
+                    )}
+                    <p className="mt-6 text-center text-[12px] leading-relaxed text-ink/35">
+                      {c.caption}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
-
-        {/* engineering scale */}
-        <Reveal className="mt-24">
-          <div className="surface p-8 sm:p-10">
-            <p className="max-w-3xl text-[1.05rem] leading-relaxed text-ink/60">
-              Behind the feed, 100+ scrapers run on six-hour intervals, keeping
-              roughly 23.5K products live and current. The pipeline is automated
-              end to end, from scrape to feed, with new arrivals surfacing
-              without anyone touching them. Built with Next.js and Supabase,
-              deployed on Vercel.
-            </p>
-          </div>
-        </Reveal>
 
         {/* live CTA */}
         <Reveal delay={0.05}>
@@ -138,7 +190,7 @@ export default function CaseStudyVue() {
             href={site.links.vue}
             target="_blank"
             rel="noreferrer"
-            className="group mt-8 flex flex-col items-start justify-between gap-5 rounded-2xl border border-line bg-ink-50 p-8 transition-all hover:border-accent/40 sm:flex-row sm:items-center sm:p-10"
+            className="group mt-24 flex flex-col items-start justify-between gap-5 rounded-2xl border border-line bg-ink-50 p-8 transition-all hover:border-accent/40 sm:flex-row sm:items-center sm:p-10"
           >
             <div>
               <p className="text-[11px] uppercase tracking-[0.16em] text-accent">
@@ -146,7 +198,7 @@ export default function CaseStudyVue() {
               </p>
               <p className="mt-3 max-w-md text-[1.15rem] leading-snug text-ink/80">
                 The product is in production with real users. Open it, follow a
-                brand, and watch the feed fill in.
+                brand, and watch the feed become yours.
               </p>
             </div>
             <span className="inline-flex shrink-0 items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-[#FAF8F5] transition-transform group-hover:translate-x-0.5">
