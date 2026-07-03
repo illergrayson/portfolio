@@ -1,25 +1,17 @@
 import Reveal from "./Reveal";
-import FsmDiagram from "./FsmDiagram";
 
 const contributions = [
   {
     no: "01",
-    title: "Redesigned the test information architecture across drone platforms",
-    body: "I inherited 5,500+ test cases organized the way the system was built, not the way it's used. I restructured them into flow-based user journeys, grouped around what an operator actually does, in sequence, so coverage maps to real workflows instead of internal module boundaries. The result reads like a map of the product's behavior, and gaps in the experience became visible for the first time.",
-    tag: "Information architecture",
+    title: "Took a new device from prototype to production",
+    body: "Test lead on Skydio’s next-generation enterprise controller from early bring-up through Beta. Led validation across four parallel release programs simultaneously — new product bring-up, GA release validation, hardware reliability testing, and the first-ever controller-only software release. Embedded with the design team to pressure-test interaction flows against real operator behavior under load. Contributed to reducing the controller RMA rate to under 1%.",
+    tag: "Hardware bring-up",
   },
   {
     no: "02",
-    title: "Modeled Fusion connectivity as a finite state machine",
-    body: "Connectivity bugs kept slipping through because nobody had a shared model of the states the system could be in. I built one: a finite state machine of controller-to-drone connectivity. I used it to document where the UI and the underlying system state quietly disagree. The most important finding? States where the system is degraded while the interface still tells the operator everything is fine.",
-    tag: "Systems modeling",
-    diagram: true,
-  },
-  {
-    no: "03",
-    title: "Embedded with the design team during controller bring-up",
-    body: "During hardware bring-up for a new controller, I sat with the design team and evaluated operator workflows on real devices, pressure-testing interaction flows against how people behave under load. This is where my human factors background does its sharpest work. Design decisions got grounded in observed operator behavior, not assumptions.",
-    tag: "Design research",
+    title: "Made a complex system legible",
+    body: "Inherited 5,500+ test cases organized around internal system architecture. Restructured them into flow-based user journeys — what an operator actually does, in sequence. This exposed gaps in the experience that the old structure hid. When the UI and the real system state disagreed (connectivity showing “connected” while telemetry was degraded), the new architecture made those lies visible and testable.",
+    tag: "Information architecture",
   },
 ];
 
@@ -28,7 +20,7 @@ export default function CaseStudySkydio() {
     <section id="skydio" className="scroll-mt-24 border-t border-line px-6 py-28">
       <div className="mx-auto max-w-content">
         <Reveal>
-          <p className="eyebrow">Case Study 03: Systems Thinking &amp; Design Impact</p>
+          <p className="eyebrow">Case Study 02: Skydio</p>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="mt-4 text-[clamp(2.2rem,5vw,3.6rem)] font-semibold leading-none tracking-[-0.03em] text-gradient">
@@ -36,14 +28,14 @@ export default function CaseStudySkydio() {
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="mt-3 max-w-2xl text-lg text-white/55">
-            Flight Test Engineer Lead, Device Platform. The title says test
-            engineering. The work is design: modeling how complex systems
-            behave, then making that behavior legible and humane.
+          <p className="mt-3 max-w-2xl text-lg text-ink/55">
+            The title says test engineering. The work is taking a new device from
+            prototype to production and making complex systems behave the way
+            people expect.
           </p>
         </Reveal>
 
-        <div className="mt-14 space-y-px overflow-hidden rounded-2xl border border-line bg-line">
+        <div className="mt-14 space-y-px overflow-hidden rounded-2xl border border-line">
           {contributions.map((c, i) => (
             <Reveal key={c.no} delay={i * 0.06}>
               <div className="bg-ink-50 p-7 sm:p-10">
@@ -52,26 +44,15 @@ export default function CaseStudySkydio() {
                     {c.no}
                   </span>
                   <div>
-                    <span className="inline-block rounded-full border border-line bg-white/[0.02] px-2.5 py-1 text-[11px] uppercase tracking-[0.14em] text-white/45">
+                    <span className="inline-block rounded-full border border-line bg-[#FAF8F5] px-2.5 py-1 text-[11px] uppercase tracking-[0.14em] text-ink/45">
                       {c.tag}
                     </span>
-                    <h3 className="mt-3 max-w-2xl text-xl font-semibold tracking-tight text-white">
+                    <h3 className="mt-3 max-w-2xl text-xl font-semibold tracking-tight text-ink">
                       {c.title}
                     </h3>
-                    <p className="mt-3 max-w-2xl text-[1.0rem] leading-relaxed text-white/55">
+                    <p className="mt-3 max-w-2xl text-[1.0rem] leading-relaxed text-ink/55">
                       {c.body}
                     </p>
-
-                    {c.diagram && (
-                      <div className="mt-7">
-                        <FsmDiagram />
-                        <p className="mt-2.5 text-xs text-white/30">
-                          A reconstructed model of the connectivity state machine.
-                          The accent path marks where UI and system state
-                          desync.
-                        </p>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>
@@ -80,7 +61,7 @@ export default function CaseStudySkydio() {
         </div>
 
         <Reveal delay={0.1}>
-          <p className="mt-12 max-w-prose text-[1.05rem] leading-relaxed text-white/55">
+          <p className="mt-12 max-w-prose text-[1.05rem] leading-relaxed text-ink/55">
             The through-line: I don&apos;t see &ldquo;the UI&rdquo; and
             &ldquo;the system&rdquo; as separate concerns. Modeling the system is
             how you design an interface that tells the truth, and that&apos;s

@@ -15,7 +15,7 @@ export const site = {
 export const nav = [
   { label: "About", href: "#about" },
   { label: "VUE", href: "#vue" },
-  { label: "Zephyr Aire", href: "#zephyr" },
   { label: "Skydio", href: "#skydio" },
+  { label: "More", href: "#more" },
   { label: "Contact", href: "#contact" },
 ];

@@ -17,7 +17,7 @@ export default function Nav() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "border-b border-line bg-ink/70 backdrop-blur-xl"
+          ? "border-b border-line bg-[#FAF8F5]/80 backdrop-blur-xl"
           : "border-b border-transparent bg-transparent"
       }`}
     >
@@ -26,7 +26,7 @@ export default function Nav() {
           href="#top"
           className="group flex items-center gap-2.5 text-sm font-medium tracking-tight"
         >
-          <span className="grid h-7 w-7 place-items-center rounded-lg border border-line bg-ink-100 text-accent transition-colors group-hover:border-accent/50">
+          <span className="grid h-7 w-7 place-items-center rounded-lg border border-line bg-ink-50 text-accent transition-colors group-hover:border-accent/50">
             <svg width="16" height="16" viewBox="0 0 64 64" fill="none" aria-hidden>
               <path
                 d="M20 19 L32 45 L44 19"
@@ -37,7 +37,7 @@ export default function Nav() {
               />
             </svg>
           </span>
-          <span className="text-white/90">Grayson Iller</span>
+          <span className="text-ink/90">Grayson Iller</span>
         </a>
 
         <nav className="hidden items-center gap-1 sm:flex">
@@ -45,7 +45,7 @@ export default function Nav() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-full px-3.5 py-1.5 text-sm text-white/55 transition-colors hover:text-white"
+              className="rounded-full px-3.5 py-1.5 text-sm text-ink/55 transition-colors hover:text-ink"
             >
               {item.label}
             </a>
@@ -54,7 +54,7 @@ export default function Nav() {
 
         <a
           href={site.links.email}
-          className="rounded-full border border-line bg-white/[0.03] px-4 py-1.5 text-sm text-white/80 transition-all hover:border-accent/40 hover:text-white"
+          className="rounded-full border border-line bg-ink-50 px-4 py-1.5 text-sm text-ink/75 transition-all hover:border-accent/40 hover:text-ink"
         >
           Get in touch
         </a>

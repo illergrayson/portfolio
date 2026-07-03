@@ -49,47 +49,38 @@ export default function About() {
               </h2>
             </Reveal>
 
-            <div className="mt-8 max-w-prose space-y-5 text-base leading-relaxed text-white/60 sm:text-[1.05rem]">
+            <div className="mt-8 max-w-prose space-y-5 text-base leading-relaxed text-ink/55 sm:text-[1.05rem]">
               <Reveal delay={0.05}>
                 <p>
                   My foundation is human factors psychology, the study of how
-                  people actually perceive, decide, and act under load. It
-                  taught me to treat an interface as a system the user is part
-                  of, not a surface to decorate. That lens shapes everything I
-                  make.
+                  people perceive, decide, and act under load. At{" "}
+                  <span className="text-ink/85">Skydio</span> I work across drone
+                  platforms on controller UI/UX, restructuring how complex systems
+                  are modeled, documented, and experienced. I map operator workflows,
+                  expose where the UI and the system disagree, and embed with the
+                  design team during hardware bring-up.
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
                 <p>
-                  At <span className="text-white/85">Skydio</span> I work across
-                  drone platforms on controller UI/UX, where the &ldquo;test
-                  engineering&rdquo; label undersells the work: I restructure how
-                  complex systems are modeled, documented, and experienced.
-                  I map operator workflows, expose where the UI and the
-                  system disagree, and embed with the design team during
-                  hardware bring-up.
-                </p>
-              </Reveal>
-              <Reveal delay={0.15}>
-                <p>
-                  Then I built <span className="text-white/85">VUE</span> to
-                  close the loop. One person, end to end. The product strategy,
-                  the component system, the conversion UX, the database, the
-                  scrapers, the deploys. It tracks fashion drops from{" "}
-                  <span className="text-white/85">100+ brands</span> into a
-                  single feed, and it&apos;s live in production with real users.
-                  Design taste and engineering depth aren&apos;t two skills I
-                  toggle between. They&apos;re one practice.
+                  Then I built <span className="text-ink/85">VUE</span> to close
+                  the loop. One person, end to end: product strategy, component
+                  system, conversion UX, database, scrapers, deploys. It tracks
+                  fashion drops from{" "}
+                  <span className="text-ink/85">100+ brands</span> into a single
+                  feed, live in production with real users. Design taste and
+                  engineering depth aren&apos;t two skills I toggle between.
+                  They&apos;re one practice.
                 </p>
               </Reveal>
             </div>
 
-            <Reveal delay={0.2}>
+            <Reveal delay={0.15}>
               <div className="mt-9 flex flex-wrap gap-2">
                 {disciplines.map((d) => (
                   <span
                     key={d}
-                    className="rounded-full border border-line bg-white/[0.02] px-3 py-1.5 text-[13px] text-white/65"
+                    className="rounded-full border border-line bg-ink-50 px-3 py-1.5 text-[13px] text-ink/60"
                   >
                     {d}
                   </span>
@@ -103,10 +94,10 @@ export default function About() {
               <dl className="divide-y divide-line">
                 {facts.map((f) => (
                   <div key={f.k} className="py-4 first:pt-0 last:pb-0">
-                    <dt className="text-[11px] uppercase tracking-[0.16em] text-accent/80">
+                    <dt className="text-[11px] uppercase tracking-[0.16em] text-accent">
                       {f.k}
                     </dt>
-                    <dd className="mt-1.5 text-[0.95rem] leading-relaxed text-white/75">
+                    <dd className="mt-1.5 text-[0.95rem] leading-relaxed text-ink/65">
                       {f.v}
                     </dd>
                   </div>

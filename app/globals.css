@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
@@ -13,27 +13,27 @@ html {
 }
 
 body {
-  background-color: #08080a;
-  color: #ededf0;
+  background-color: #FAF8F5;
+  color: #1C1917;
 }
 
-/* Subtle grain + radial glow backdrop */
+/* Subtle warm radial backdrop */
 .bg-aura {
   background:
-    radial-gradient(60rem 40rem at 50% -10%, rgba(124, 156, 255, 0.10), transparent 60%),
-    radial-gradient(40rem 30rem at 100% 10%, rgba(124, 156, 255, 0.05), transparent 55%),
-    #08080a;
+    radial-gradient(60rem 40rem at 50% -10%, rgba(194, 114, 78, 0.06), transparent 60%),
+    radial-gradient(40rem 30rem at 100% 10%, rgba(194, 114, 78, 0.03), transparent 55%),
+    #FAF8F5;
 }
 
 /* Hairline divider */
 .hairline {
-  border-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(28, 25, 23, 0.08);
 }
 
 /* Selection */
 ::selection {
-  background: rgba(124, 156, 255, 0.28);
-  color: #fff;
+  background: rgba(194, 114, 78, 0.2);
+  color: #1C1917;
 }
 
 /* Thin custom scrollbar */
@@ -42,24 +42,21 @@ body {
   height: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(28, 25, 23, 0.12);
   border-radius: 999px;
-  border: 3px solid #08080a;
+  border: 3px solid #FAF8F5;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(28, 25, 23, 0.22);
 }
 
-/* Gradient text */
+/* Gradient text — warm dark on light */
 .text-gradient {
-  background: linear-gradient(180deg, #ffffff 0%, #b9bccb 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #1C1917;
 }
 
 .text-gradient-accent {
-  background: linear-gradient(90deg, #a9bbff 0%, #7c9cff 50%, #8fd6c8 100%);
+  background: linear-gradient(90deg, #C2724E 0%, #D4956F 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -70,14 +67,14 @@ body {
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #7c9cff;
+  color: #C2724E;
   font-weight: 500;
 }
 
 /* Card surface */
 .surface {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01));
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(28, 25, 23, 0.025);
+  border: 1px solid rgba(28, 25, 23, 0.08);
   border-radius: 18px;
 }
 
@@ -85,8 +82,8 @@ body {
   transition: border-color 0.4s ease, background 0.4s ease, transform 0.4s ease;
 }
 .surface-hover:hover {
-  border-color: rgba(124, 156, 255, 0.35);
-  background: linear-gradient(180deg, rgba(124, 156, 255, 0.06), rgba(255, 255, 255, 0.01));
+  border-color: rgba(194, 114, 78, 0.35);
+  background: rgba(194, 114, 78, 0.04);
 }
 
 /* Reduce motion */

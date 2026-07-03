@@ -55,7 +55,7 @@ export default function Contact() {
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="mt-5 max-w-prose text-lg text-white/55">
+          <p className="mt-5 max-w-prose text-lg text-ink/55">
             I&apos;m open to design engineering roles. Based in {site.location},
             open to remote. The fastest way to reach me is email.
           </p>
@@ -71,16 +71,16 @@ export default function Contact() {
                 rel="noreferrer"
                 className="surface surface-hover group flex items-center gap-4 p-5"
               >
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-line bg-white/[0.03] text-accent">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-line bg-ink-50 text-accent">
                   <svg width="20" height="20" viewBox="0 0 24 24">
                     {c.icon}
                   </svg>
                 </span>
                 <span className="min-w-0">
-                  <span className="block text-[11px] uppercase tracking-[0.14em] text-white/40">
+                  <span className="block text-[11px] uppercase tracking-[0.14em] text-ink/35">
                     {c.label}
                   </span>
-                  <span className="block truncate text-sm text-white/80 transition-colors group-hover:text-white">
+                  <span className="block truncate text-sm text-ink/75 transition-colors group-hover:text-ink">
                     {c.value}
                   </span>
                 </span>
@@ -93,19 +93,19 @@ export default function Contact() {
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
               href={site.links.email}
-              className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-[#FAF8F5] transition-transform hover:-translate-y-0.5"
             >
               Say hello
             </a>
             <a
               href="/grayson-iller-resume.pdf"
               download
-              className="group inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.02] px-5 py-2.5 text-sm text-white/80 transition-all hover:border-accent/40 hover:text-white"
+              className="group inline-flex items-center gap-2 rounded-full border border-line bg-ink-50 px-5 py-2.5 text-sm text-ink/75 transition-all hover:border-accent/40 hover:text-ink"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
                 <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              Download résumé
+              Download r&eacute;sum&eacute;
             </a>
           </div>
         </Reveal>

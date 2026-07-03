@@ -9,17 +9,17 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          DEFAULT: "#08080A",
-          50: "#0C0C0F",
-          100: "#101013",
-          200: "#16161A",
-          300: "#1D1D22",
+          DEFAULT: "#1C1917",
+          50: "rgba(28, 25, 23, 0.025)",
+          100: "rgba(28, 25, 23, 0.05)",
+          200: "rgba(28, 25, 23, 0.08)",
+          300: "rgba(28, 25, 23, 0.12)",
         },
-        line: "rgba(255,255,255,0.08)",
+        line: "rgba(28, 25, 23, 0.08)",
         accent: {
-          DEFAULT: "#7C9CFF",
-          soft: "#A9BBFF",
-          glow: "#5E7BFF",
+          DEFAULT: "#C2724E",
+          soft: "#D4956F",
+          glow: "#A85A3A",
         },
         // VUE brand tokens (used only in the VUE case study mockup)
         vue: {
