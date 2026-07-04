@@ -15,13 +15,12 @@ const jsonLd = {
   jobTitle: "Design Engineer",
   address: {
     "@type": "PostalPlace",
-    addressLocality: "Redwood City",
+    addressLocality: "San Mateo",
     addressRegion: "CA",
   },
   email: site.email,
-  url: "https://vueniverse.com",
+  url: "https://grayson-iller.vercel.app",
   sameAs: [site.links.linkedin, site.links.vue],
-  worksFor: { "@type": "Organization", name: "Skydio" },
   alumniOf: {
     "@type": "CollegeOrUniversity",
     name: "Embry-Riddle Aeronautical University",

@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useAnimationControls } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { site } from "@/lib/site";
 
 const container = {
@@ -20,6 +21,30 @@ const item = {
 };
 
 export default function Hero() {
+  const controls = useAnimationControls();
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    controls.start("show");
+    // Reliability fallback: if the tab is backgrounded or loads out of focus,
+    // framer-motion pauses its render loop and the hero can stay blank — the
+    // first thing a visitor sees. After a short delay, snap framer to its final
+    // state AND write the final style straight to each animated child (a direct
+    // DOM write applies even while the document is hidden, when framer won't).
+    const t = setTimeout(() => {
+      controls.set("show");
+      const el = ref.current;
+      if (el) {
+        for (const child of Array.from(el.children)) {
+          const c = child as HTMLElement;
+          c.style.opacity = "1";
+          c.style.transform = "none";
+        }
+      }
+    }, 1500);
+    return () => clearTimeout(t);
+  }, [controls]);
+
   return (
     <section
       id="top"
@@ -40,9 +65,10 @@ export default function Hero() {
       />
 
       <motion.div
+        ref={ref}
         variants={container}
         initial="hidden"
-        animate="show"
+        animate={controls}
         className="relative mx-auto w-full max-w-content"
       >
         <motion.div variants={item}>

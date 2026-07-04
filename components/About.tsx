@@ -34,7 +34,7 @@ const disciplines = [
 
 export default function About() {
   return (
-    <section id="about" className="scroll-mt-24 border-t border-line px-6 py-28">
+    <section id="about" className="scroll-mt-24 border-t border-line px-6 py-20">
       <div className="mx-auto max-w-content">
         <Reveal>
           <p className="eyebrow">About</p>
@@ -44,8 +44,8 @@ export default function About() {
           <div>
             <Reveal>
               <h2 className="max-w-3xl text-balance text-[clamp(1.8rem,4vw,3rem)] font-semibold leading-[1.08] tracking-[-0.02em] text-gradient">
-                I design the product, build it end to end, and ground every
-                decision in how people actually use it.
+                Human factors psychology trained. Ships production code. Treats
+                design and engineering as one discipline.
               </h2>
             </Reveal>
 

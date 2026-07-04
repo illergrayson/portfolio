@@ -2,7 +2,7 @@ import Reveal from "./Reveal";
 
 export default function AlsoSection() {
   return (
-    <section id="more" className="scroll-mt-24 border-t border-line px-6 py-28">
+    <section id="more" className="scroll-mt-24 border-t border-line px-6 py-20">
       <div className="mx-auto max-w-content">
         <Reveal>
           <p className="eyebrow">Also</p>

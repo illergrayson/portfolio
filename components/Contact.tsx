@@ -43,7 +43,7 @@ const channels = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="scroll-mt-24 border-t border-line px-6 py-28">
+    <section id="contact" className="scroll-mt-24 border-t border-line px-6 py-20">
       <div className="mx-auto max-w-content">
         <Reveal>
           <p className="eyebrow">Contact</p>

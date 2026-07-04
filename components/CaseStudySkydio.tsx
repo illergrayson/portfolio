@@ -17,7 +17,7 @@ const contributions = [
 
 export default function CaseStudySkydio() {
   return (
-    <section id="skydio" className="scroll-mt-24 border-t border-line px-6 py-28">
+    <section id="skydio" className="scroll-mt-24 border-t border-line px-6 py-20">
       <div className="mx-auto max-w-content">
         <Reveal>
           <p className="eyebrow">Case Study 02: Skydio</p>
