@@ -5,66 +5,82 @@ import { site } from "@/lib/site";
 const contributions = [
   {
     no: "01",
-    tag: "Product design",
-    title: "Designed a personalized feed experience",
-    body: "The feed is the product. Anonymous visitors see every brand's newest arrivals; the moment you follow the labels you actually care about, the feed collapses to just those drops — grouped by brand, newest first, with real names and real prices pulled straight from each storefront. I designed the whole flow in Figma and shipped it in React.",
+    tag: "Progressive disclosure",
+    title: "Tore down the login wall — because the data said to",
+    body: "VUE used to gate the feed behind sign-up and a follow step. Before touching it, I ran the retention numbers: visitors who clicked into a product came back at 50%; visitors who didn't returned at 6% — an 8× gap. Following brands predicted nothing. So the wall was filtering out the exact behavior that correlates with people staying. I killed the login/follow gate and opened the feed, brand pages, and discovery to anonymous visitors. Auth moved from the front door to the moment of intent: the first time you follow or save, an inline AuthGate appears and re-runs your action the instant you're in — no lost click, no dead end. I wrote an onboarding investigation doc before committing — “I need more investigation and to really know this is a good move” — then shipped it.",
     points: [
-      "Follow to personalize — anonymous sees everything, followed brands float to the top.",
-      "Real products, real prices, direct brand links. Nothing mocked, nothing stale.",
-      "Save anywhere: the native VUE wishlist, or route a piece to Pinterest, ShopMy, or LTK.",
-    ],
-    shots: [
-      {
-        src: "/vue-mobile-feed.png",
-        alt: "The VUE feed on mobile: New Arrivals, dated, with brand sections and real product cards.",
-      },
-      {
-        src: "/vue-mobile-feed-cards.png",
-        alt: "The feed scrolled to show the consistent product-card rhythm across brands.",
-      },
-    ],
-    caption: "One feed, grouped by brand — a single card rhythm across every label.",
-  },
-  {
-    no: "02",
-    tag: "Data architecture",
-    title: "Built a system that scales itself",
-    body: "Behind the feed, 100+ scrapers run on six-hour intervals, keeping roughly 23.5K products live and current. It launched tracking 28 brands; adding the next one is now a config entry, not an engineering project. A dual pipeline — Deno and Playwright on Supabase Edge Functions — normalizes a hundred different catalog shapes (inconsistent image ratios, names from “Ryder Pintuck Shorts” to bare SKUs, prices buried in shifting markup) into the one card shape the feed renders. The hard part was never scraping. It was designing a system where the hundredth brand costs the same as the second.",
-    points: [
-      "100+ brands, ~23.5K products, refreshed every 6 hours — automated end to end, scrape to feed.",
-      "Dual pipeline: Deno + Playwright on Supabase Edge Functions.",
-      "Onboarding a brand is a config entry, not a rebuild — the calendar grows itself.",
-    ],
-    shots: [
-      {
-        src: "/vue-mobile-feed-scale.png",
-        alt: "The feed's weekly roll-up: dozens of brands with live new-style counts.",
-      },
-      {
-        src: "/vue-mobile-brands.png",
-        alt: "The fashion drop calendar: 100+ brands organized by tier in one directory.",
-      },
-    ],
-    caption: "Live style counts and a tiered drop calendar — the surface of a self-refreshing pipeline.",
-  },
-  {
-    no: "03",
-    tag: "Interaction design",
-    title: "Made mobile feel native",
-    body: "VUE is mobile-first. Every surface is designed for a thumb first and a desktop second — a single-column feed with a consistent card cadence, an editorial type system that lets a hundred brands scan cleanly in one scroll, and a layout that reflows into a directory and multi-column grid on larger screens. It reads like a native shopping app, not a website squeezed onto a phone.",
-    points: [
-      "Mobile-first single column, thumb-scaled cards and tap targets.",
-      "One typographic system normalizes 100+ brands into a scannable cadence.",
-      "Responsive by design — the phone feed reflows into a desktop directory.",
+      "Retention analysis: 50% return for product-clickers vs 6% for non-clickers; following predicted nothing.",
+      "Removed the sign-up/follow wall — feed, brands, and discover are open to anonymous visitors.",
+      "Auth triggers at the point of intent: follow/save opens an inline gate that completes the original action on success.",
     ],
     shots: [
       {
         src: "/vue-mobile-landing.png",
-        alt: "The VUE landing on mobile: Every new drop, one feed, with a live product carousel.",
+        alt: "The VUE landing on mobile: every new drop in one feed, open to anonymous visitors.",
+      },
+      {
+        src: "/vue-mobile-feed.png",
+        alt: "The open feed an anonymous visitor sees — no login wall in front of the product.",
       },
     ],
-    caption: "The front door, built for the phone first.",
+    caption:
+      "Auth moved from the front door to the moment of intent — browse freely, sign in only to act.",
   },
+  {
+    no: "02",
+    tag: "Design system & human factors",
+    title: "One accent, one type scale, thumb-sized targets",
+    body: "The product had drifted into three different auth screens and half a dozen button styles. I ran a design audit and collapsed it into one system: a single accent (brick rose), a formalized type scale pairing a Cormorant display face with Inter, a letterspaced Inter-caps eyebrow, and one hard rule for shape — squares for containers, pills for actions. Then I tuned it against how hands and attention actually behave. Touch targets went to a 44px minimum (Fitts's Law); the bottom nav sits at 60px with safe-area insets so the home bar never steals a tap. The hero is full-height on your first visits, then collapses to a compact bar after three (a localStorage counter) — first-run users get orientation, returning users get straight to the feed. A persistent Feed / Discover / Brands / Wishlist / Profile nav with icons and labels keeps navigation recognition, not recall; a saved item is a filled brick-rose heart on a stable URL you can always find again.",
+    points: [
+      "Consolidated three auth designs and 3+ button styles into one system — single accent, one type scale, square-vs-pill radius rule.",
+      "44px touch targets, 60px safe-area bottom nav — Fitts's Law applied to a thumb, not a cursor.",
+      "Hero collapses after 3 visits; persistent labeled nav — cognitive-load reduction and recognition over recall, by design.",
+    ],
+    shots: [
+      {
+        src: "/vue-mobile-feed-cards.png",
+        alt: "The feed's consistent card rhythm — one type scale and single accent across every brand.",
+      },
+      {
+        src: "/vue-mobile-brands.png",
+        alt: "The brand directory: persistent labeled bottom nav for recognition-over-recall navigation.",
+      },
+    ],
+    caption:
+      "One accent, one type scale, and touch targets sized for a thumb — a system, not a pile of screens.",
+  },
+  {
+    no: "03",
+    tag: "Accessibility & rigor",
+    title: "No dead ends, and it passes AA",
+    body: "The unglamorous half of human factors is error states and access. Empty feeds never dead-end — a quiet feed says “your brands are quiet,” and users following zero brands land on Discover instead of a blank screen. Every error announces itself with role=“alert”; the auth modal traps focus, returns it on close, and closes on Escape. I set WCAG 2.1 AA as the bar and drove a remediation pass across 33 files — roughly 158 contrast fixes — plus skip-to-content, main landmarks, and a prefers-reduced-motion override. This is the layer where I'm precise about the split: I specified the standard and the behavior; the contrast-ratio math, the ARIA plumbing, and the React/TypeScript were executed by AI tooling under my direction. The judgment is mine — what's a wall versus an invite, what counts as P0, how the system should behave. The implementation is modern tooling doing what I told it to.",
+    points: [
+      "No dead-end empty states — a tailored “your brands are quiet”; zero-brand users route to Discover.",
+      "Auth modal traps and returns focus, closes on Escape; errors announce via role=“alert”; skip-to-content and reduced-motion support.",
+      "WCAG 2.1 AA pass across 33 files (~158 contrast fixes) — standard set by me, math and ARIA executed by AI tooling.",
+    ],
+    shots: [
+      {
+        src: "/vue-mobile-feed-scale.png",
+        alt: "The feed's weekly roll-up — legible hierarchy and AA-contrast type across dozens of brands.",
+      },
+    ],
+    caption: "Editorial hierarchy that still clears AA contrast — legibility as a requirement, not a finish.",
+  },
+];
+
+const mine = [
+  "The product thesis: a routing layer over 100+ storefronts with native save — every new drop, one feed.",
+  "The browse-freely auth model — I framed the problem, ran the retention data, and made the call.",
+  "The design system: cream/teal palette, Cormorant + Inter pairing, letterspaced Inter-caps eyebrow, square-vs-pill radius rule, single-accent discipline.",
+  "The prioritization: P0/P1 triage, and every call about what's a wall versus an invite.",
+  "The PRDs I authored — auth-signin-flow-prd.md, the onboarding stage-1 plan.",
+];
+
+const directed = [
+  "React / TypeScript implementation.",
+  "Contrast-ratio math and ARIA plumbing to hit the AA bar.",
+  "Hydration and performance fixes.",
 ];
 
 export default function CaseStudyVue() {
@@ -84,9 +100,10 @@ export default function CaseStudyVue() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink/55">
-                A fashion-intelligence platform I designed in Figma and shipped
-                in code. Solo. It&apos;s live, it&apos;s monetized, and people
-                use it.
+                A live fashion-discovery product. I own the product thinking, the
+                design system, and the human-factors calls — then direct AI
+                tooling to build it in React. It&apos;s in production, with real
+                users, monetized.
               </p>
             </Reveal>
           </div>
@@ -110,8 +127,8 @@ export default function CaseStudyVue() {
           <p className="mt-8 text-[13px] tracking-wide text-ink/40">
             100+ brands{" "}
             <span className="px-1.5 text-ink/20">&middot;</span> 23.5K+ products
-            tracked <span className="px-1.5 text-ink/20">&middot;</span> refreshed
-            every 6 hours
+            tracked <span className="px-1.5 text-ink/20">&middot;</span> B.S.
+            Human Factors Psychology, applied
           </p>
         </Reveal>
 
@@ -184,13 +201,63 @@ export default function CaseStudyVue() {
           })}
         </div>
 
+        {/* honest split: what's mine vs what I directed */}
+        <Reveal delay={0.05}>
+          <div className="mt-24 rounded-2xl border border-line bg-ink-50 p-8 sm:p-10">
+            <p className="text-[11px] uppercase tracking-[0.16em] text-accent">
+              Where I stop and the tooling starts
+            </p>
+            <p className="mt-3 max-w-2xl text-[1.05rem] leading-relaxed text-ink/70">
+              I don&apos;t pretend I hand-coded every line. I do the parts that
+              don&apos;t come from a framework — the product thinking, the design
+              system, the research, the priority calls — and I direct AI tooling
+              to implement them at production quality. Here&apos;s the honest
+              split.
+            </p>
+            <div className="mt-8 grid gap-8 sm:grid-cols-2 sm:gap-12">
+              <div>
+                <h4 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink/70">
+                  Mine — and recreatable anywhere
+                </h4>
+                <ul className="mt-4 space-y-2.5">
+                  {mine.map((m) => (
+                    <li
+                      key={m}
+                      className="flex gap-2.5 text-[0.95rem] leading-relaxed text-ink/60"
+                    >
+                      <span className="mt-[0.55rem] h-1 w-1 shrink-0 rounded-full bg-accent/70" />
+                      {m}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink/70">
+                  Executed by AI, under my direction
+                </h4>
+                <ul className="mt-4 space-y-2.5">
+                  {directed.map((d) => (
+                    <li
+                      key={d}
+                      className="flex gap-2.5 text-[0.95rem] leading-relaxed text-ink/60"
+                    >
+                      <span className="mt-[0.55rem] h-1 w-1 shrink-0 rounded-full border border-ink/25" />
+                      {d}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
         {/* live CTA */}
         <Reveal delay={0.05}>
           <a
             href={site.links.vue}
             target="_blank"
             rel="noreferrer"
-            className="group mt-24 flex flex-col items-start justify-between gap-5 rounded-2xl border border-line bg-ink-50 p-8 transition-all hover:border-accent/40 sm:flex-row sm:items-center sm:p-10"
+            className="group mt-12 flex flex-col items-start justify-between gap-5 rounded-2xl border border-line bg-ink-50 p-8 transition-all hover:border-accent/40 sm:flex-row sm:items-center sm:p-10"
           >
             <div>
               <p className="text-[11px] uppercase tracking-[0.16em] text-accent">
