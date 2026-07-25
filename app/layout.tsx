@@ -16,7 +16,7 @@ const serif = Instrument_Serif({
   display: "swap",
 });
 
-const siteUrl = "https://grayson-iller.vercel.app";
+const siteUrl = "https://portfolio-eta-rose-i4vh5pmjy6.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -42,12 +42,21 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "Grayson Iller",
     type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Grayson Iller — Design engineer who designs the product and ships the code.",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Grayson Iller · Design Engineer",
     description:
       "Design engineer at the seam of product design and front-end systems. Creator of VUE.",
+    images: ["/og.png"],
   },
   icons: {
     icon: "/favicon.svg",
