@@ -1,0 +1,144 @@
+<!doctype html>
+<!-- Source for public/grayson-iller-resume.pdf. Regenerate: install @fontsource/inter, fix font paths, print to PDF (Letter, no margins, backgrounds on) via headless Chrome. -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>resume.html</title>
+<style>
+  @font-face { font-family: 'Inter'; font-weight: 400; src: url('../node_modules-fonts/@fontsource/inter/files/inter-latin-400-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 500; src: url('../node_modules-fonts/@fontsource/inter/files/inter-latin-500-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 600; src: url('../node_modules-fonts/@fontsource/inter/files/inter-latin-600-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 700; src: url('../node_modules-fonts/@fontsource/inter/files/inter-latin-700-normal.woff2') format('woff2'); }
+
+  :root {
+    --accent: #4A5BD6;
+    --ink: #1d1d1f;
+    --body: #3c3c40;
+    --muted: #86868b;
+    --rule: #e3e3e6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #fff; }
+  body {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--body);
+    width: 8.5in;
+    padding: 0.72in 0.68in 0.55in;
+    font-size: 9.6px;
+    line-height: 1.52;
+    -webkit-print-color-adjust: exact;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); }
+  .role {
+    margin-top: 7px;
+    font-size: 10.5px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent);
+  }
+  .contact { margin-top: 9px; font-size: 9.4px; color: var(--muted); }
+  .contact span { margin-right: 18px; }
+  .headrule { margin-top: 13px; border-top: 1px solid var(--rule); }
+
+  .summary { margin-top: 17px; font-size: 9.9px; color: var(--body); line-height: 1.55; }
+
+  .section { margin-top: 23px; }
+  .section-h {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.22em; color: var(--accent);
+    padding-bottom: 5px; border-bottom: 1px solid var(--rule); margin-bottom: 11px;
+  }
+
+  .entry { margin-bottom: 17px; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-head { display: flex; align-items: baseline; }
+  .entry-title { font-size: 10.6px; font-weight: 700; color: var(--ink); }
+  .entry-org { font-size: 9.4px; color: var(--body); margin-left: 10px; }
+  .entry-org .sep { color: var(--muted); margin-right: 6px; }
+  .entry-when { margin-left: auto; font-size: 8.6px; color: var(--muted); white-space: nowrap; }
+
+  ul { margin-top: 5px; list-style: none; }
+  li { position: relative; padding-left: 13px; margin-bottom: 4.5px; line-height: 1.55; }
+  li::before { content: ''; position: absolute; left: 1px; top: 6px; width: 3.5px; height: 3.5px; border-radius: 50%; background: var(--accent); }
+
+  .edu { font-size: 9.4px; line-height: 1.55; }
+  .edu b { color: var(--ink); font-weight: 700; }
+
+  .cols { display: flex; gap: 40px; }
+  .cols > div { flex: 1; }
+  .pub { margin-bottom: 6px; line-height: 1.5; }
+  .cap { margin-bottom: 6px; line-height: 1.5; }
+  .cap b { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+  <h1>Grayson Iller</h1>
+  <div class="role">DESIGN ENGINEER</div>
+  <div class="contact">
+    <span>San Mateo, CA</span>
+    <span><a href="mailto:Graysoniller@outlook.com">Graysoniller@outlook.com</a></span>
+    <span><a href="https://www.linkedin.com/in/grayson-iller-a119b2202/">linkedin.com/in/grayson-iller-a119b2202</a></span>
+    <span><a href="https://vueniverse.com">vueniverse.com</a></span>
+  </div>
+  <div class="headrule"></div>
+
+  <p class="summary">
+    Design engineer working at the seam of product design and front-end systems. Human factors
+    psychology foundation, systems experience across drone platforms at Skydio, and VUE &mdash; a
+    production fashion-drop platform designed and built solo, end to end. I design the product and
+    ship the code.
+  </p>
+
+  <div class="section">
+    <div class="section-h">E X P E R I E N C E</div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Device Platform Lead, Controller UI/UX</span>
+        <span class="entry-org"><span class="sep">&middot;</span>Skydio</span>
+        <span class="entry-when">Jun 2023 &ndash; Present &middot; Intern May&ndash;Aug 2022</span>
+      </div>
+      <ul>
+        <li>Redesigned the test information architecture across drone platforms &mdash; restructured 5,500+ cases from system-shaped modules into flow-based operator user journeys, making experience gaps visible for the first time.</li>
+        <li>Modeled controller-to-drone (Fusion) connectivity as a finite state machine to document UI-to-system state desync patterns &mdash; surfacing states where the system is degraded while the interface still reads &ldquo;connected.&rdquo;</li>
+        <li>Embedded with the design team during new-controller hardware bring-up, evaluating operator workflows on real devices and grounding interaction decisions in observed behavior under load.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Founder, Designer &amp; Engineer</span>
+        <span class="entry-org"><span class="sep">&middot;</span>VUE &mdash; <a href="https://vueniverse.com">vueniverse.com</a></span>
+        <span class="entry-when">2024 &ndash; Present</span>
+      </div>
+      <ul>
+        <li>Designed and built a fashion drop-tracking platform solo &mdash; product strategy, design system, front end, database, scrapers, and deploys &mdash; live in production with real users.</li>
+        <li>Tracks 100+ brands into a single recency-ordered feed; built a component system on Radix/shadcn with an editorial design language on top.</li>
+        <li>Engineered conversion UX with intent-based auth gating (browse freely, authenticate at point of action) and an SEO prerender pipeline scoring 97/98 on Lighthouse.</li>
+        <li>Stack: React 18, TypeScript, Tailwind v4, Supabase (Postgres &middot; Auth &middot; Edge Functions), Vercel.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-h">E D U C A T I O N</div>
+    <p class="edu">
+      <b>B.S. Human Factors Psychology</b> (HCI Focus), Minor in Aerospace Physiology &mdash; Embry-Riddle
+      Aeronautical University. NCAA Division II athlete.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="cols">
+      <div>
+        <div class="section-h">S E L E C T E D&ensp;P U B L I C A T I O N S</div>
+        <p class="pub">&ldquo;Pilot-in-the-loop technology for moon landings.&rdquo; IAF / IAA, 2022.</p>
+        <p class="pub">&ldquo;The Link Between Spatial Disorientation in Flight and Mild Hypoxia.&rdquo; 2021.</p>
+      </div>
+      <div>
+        <div class="section-h">C A P A B I L I T I E S</div>
+        <p class="cap"><b>Design:</b> Product design, design systems, IA, interaction &amp; motion, human factors research</p>
+        <p class="cap"><b>Engineering:</b> React, TypeScript, Next.js, Tailwind, Supabase/Postgres, Vercel</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
