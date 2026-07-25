@@ -26,16 +26,11 @@ export default function Nav() {
           href="#top"
           className="group flex items-center gap-2.5 text-sm font-medium tracking-tight"
         >
-          <span className="grid h-7 w-7 place-items-center rounded-lg border border-line bg-ink-50 text-accent transition-colors group-hover:border-accent/50">
-            <svg width="16" height="16" viewBox="0 0 64 64" fill="none" aria-hidden>
-              <path
-                d="M20 19 L32 45 L44 19"
-                stroke="currentColor"
-                strokeWidth="4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+          <span
+            className="grid h-7 w-7 place-items-center rounded-lg border border-line bg-ink-50 text-[13px] font-semibold text-accent transition-colors group-hover:border-accent/50"
+            aria-hidden
+          >
+            G
           </span>
           <span className="text-ink/90">Grayson Iller</span>
         </a>
