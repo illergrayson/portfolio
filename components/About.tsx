@@ -57,8 +57,8 @@ export default function About() {
                   <span className="text-ink/85">Skydio</span> I work across drone
                   platforms on controller UI/UX, restructuring how complex systems
                   are modeled, documented, and experienced. I map operator workflows,
-                  expose where the UI and the system disagree, and embed with the
-                  design team during hardware bring-up.
+                  expose where the UI and the system disagree, and partner with
+                  product, design, and engineering through hardware bring-up.
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
