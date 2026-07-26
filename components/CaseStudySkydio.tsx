@@ -48,6 +48,17 @@ const loop = [
   { name: "Fix validation", d: "did it hold? back to the field" },
 ];
 
+const process = [
+  "Observe",
+  "Reproduce",
+  "Isolate",
+  "Measure customer impact",
+  "Partner with engineering",
+  "Validate fix",
+  "Assess release risk",
+  "Ship",
+];
+
 const frictions = [
   {
     moment: "Connection handoff",
@@ -154,11 +165,12 @@ export default function CaseStudySkydio() {
         </Reveal>
         <Reveal delay={0.1}>
           <p className="mt-4 max-w-2xl text-lg text-ink/55">
-            Four years of flight test across Skydio&apos;s controller platforms
-            — multiple hardware generations, parallel release programs,
-            operators flying public-safety, inspection, and defense missions.
-            This isn&apos;t a project write-up. It&apos;s the principles the
-            work keeps proving, and the systems I&apos;ve built around them.
+            Four years of flight test at Skydio — across drone platforms,
+            multiple controller hardware generations, and four parallel release
+            programs, for operators flying public-safety, inspection, and
+            defense missions. I own release validation for the controller
+            platform: the strategy, the structure, and the evidence behind ship
+            decisions. These are the principles underneath that work.
           </p>
         </Reveal>
 
@@ -246,9 +258,10 @@ export default function CaseStudySkydio() {
                 documented every state where the screen says
                 &ldquo;connected&rdquo; while the link underneath is degraded —
                 then made those states testable, so ambiguity gets caught before
-                an operator meets it mid-mission. Trust isn&apos;t a feeling.
-                It&apos;s the absence of moments where the product surprises the
-                person using it.
+                an operator meets it mid-mission. An operator who&apos;s been
+                surprised by the screen once stops trusting it and starts
+                second-guessing the aircraft. That&apos;s the failure I validate
+                against.
               </p>
               <ArtifactShell
                 label="Recreated artifact · Where mental models break"
@@ -292,9 +305,9 @@ export default function CaseStudySkydio() {
                 org is organized — by subsystem. Complete coverage, no view of
                 the experience. I reorganized validation around how operators
                 actually work: journeys, in sequence, across drone platforms.
-                The gaps between steps — where products actually fail people —
-                became visible, and the journey structure became the template
-                for how coverage is organized.
+                The gaps between steps became visible — and the gaps are where
+                products fail. The journey structure is now the template for
+                how coverage is organized across platforms.
               </p>
               <ArtifactShell
                 label="Recreated artifact · Information architecture, before / after"
@@ -346,10 +359,11 @@ export default function CaseStudySkydio() {
                 built the cadence that grounds those calls in evidence: bug
                 scrubs where severity is argued against reproduction, logs, and
                 user impact — not volume — and program reviews that give
-                leadership an honest picture of risk. Across four parallel
-                release programs, my job is the line: what&apos;s cosmetic,
-                what&apos;s shippable-but-ugly, and what breaks operator trust
-                and blocks the release.
+                leadership an honest picture of risk. I&apos;ve run this across
+                four programs at once: new hardware bring-up, GA validation,
+                hardware reliability, and the first controller-only software
+                release. The work is separating what&apos;s cosmetic, what
+                ships with a known fix, and what should block.
               </p>
               <ArtifactShell
                 label="Recreated artifact · Release decision matrix"
@@ -388,10 +402,10 @@ export default function CaseStudySkydio() {
                 product learns. I run the loop that puts pre-release builds into
                 real workflows and moves what we observe into engineering
                 priorities: captured with logs and user impact, triaged pattern
-                from one-off, validated, and back into the field. Partnering
-                across product, design, engineering, program management, and
-                flight test, deciding what a team learns about its product — and
-                when — shapes what ships as much as any mockup does.
+                from one-off, validated, and back into the field. I run it with
+                product, design, engineering, and program management — it&apos;s
+                how ambiguous feedback becomes an engineering priority instead
+                of a Slack thread.
               </p>
               <ArtifactShell
                 label="Recreated artifact · How feedback becomes a ship decision"
@@ -418,6 +432,34 @@ export default function CaseStudySkydio() {
             </>
           </Principle>
         </div>
+
+        <Reveal delay={0.08}>
+          <div className="mt-12 rounded-2xl border border-line bg-ink-50 p-7 sm:px-10 sm:py-8">
+            <p className="text-[11px] uppercase tracking-[0.16em] text-accent">
+              How I work an issue
+            </p>
+            <div className="mt-5 flex flex-wrap items-center gap-y-3">
+              {process.map((step, i) => (
+                <span key={step} className="flex items-center">
+                  <span className="text-[0.95rem] font-medium tracking-tight text-ink/80">
+                    {step}
+                  </span>
+                  {i < process.length - 1 ? (
+                    <span className="px-2.5 text-accent/60" aria-hidden>
+                      →
+                    </span>
+                  ) : null}
+                </span>
+              ))}
+            </div>
+            <p className="mt-4 max-w-2xl text-[0.85rem] leading-relaxed text-ink/45">
+              The same discipline every time, whether the observation comes from
+              a dogfooding session, a field report, or my own pre-flight. Most
+              issues die at &ldquo;reproduce.&rdquo; The ones that survive earn
+              engineering time.
+            </p>
+          </div>
+        </Reveal>
 
         <Reveal delay={0.1}>
           <p className="mt-12 max-w-prose text-[1.05rem] leading-relaxed text-ink/55">
