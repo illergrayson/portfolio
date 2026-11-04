@@ -19,7 +19,7 @@ const jsonLd = {
     addressRegion: "CA",
   },
   email: site.email,
-  url: "https://grayson-iller.vercel.app",
+  url: "https://portfolio-eta-rose-i4vh5pmjy6.vercel.app",
   sameAs: [site.links.linkedin, site.links.vue],
   alumniOf: {
     "@type": "CollegeOrUniversity",

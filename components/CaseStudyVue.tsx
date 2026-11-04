@@ -6,8 +6,8 @@ const contributions = [
   {
     no: "01",
     tag: "Progressive disclosure",
-    title: "Tore down the login wall — because the data said to",
-    body: "VUE used to gate the feed behind sign-up and a follow step. Before touching it, I ran the retention numbers: visitors who clicked into a product came back at 50%; visitors who didn't returned at 6% — an 8× gap. Following brands predicted nothing. So the wall was filtering out the exact behavior that correlates with people staying. I killed the login/follow gate and opened the feed, brand pages, and discovery to anonymous visitors. Auth moved from the front door to the moment of intent: the first time you follow or save, an inline AuthGate appears and re-runs your action the instant you're in — no lost click, no dead end.",
+    title: "Tore down the login wall because the data said to",
+    body: "VUE used to gate the feed behind sign-up and a follow step. Before touching it, I ran the retention numbers: visitors who clicked into a product came back at 50%; visitors who didn't returned at 6%, an 8× gap. Following brands predicted nothing. So the wall was filtering out the exact behavior that correlates with people staying. I killed the login/follow gate and opened the feed, brand pages, and discovery to anonymous visitors. Auth moved from the front door to the moment of intent: the first time you follow or save, an inline AuthGate appears and re-runs your action the instant you're in. No lost click, no dead end.",
     shots: [
       {
         src: "/vue-mobile-landing.png",
@@ -15,7 +15,7 @@ const contributions = [
       },
       {
         src: "/vue-mobile-feed.png",
-        alt: "The open feed an anonymous visitor sees — no login wall in front of the product.",
+        alt: "The open feed an anonymous visitor sees, with no login wall in front of the product.",
       },
     ],
   },
@@ -23,11 +23,11 @@ const contributions = [
     no: "02",
     tag: "Design system & human factors",
     title: "One accent, one type scale, thumb-sized targets",
-    body: "The product had drifted into three different auth screens and half a dozen button styles. I ran a design audit and collapsed it into one system: a single accent (brick rose), a formalized type scale pairing a Cormorant display face with Inter, a letterspaced Inter-caps eyebrow, and one hard rule for shape — squares for containers, pills for actions. Then I tuned it against how hands and attention actually behave. Touch targets went to a 44px minimum (Fitts's Law); the bottom nav sits at 60px with safe-area insets so the home bar never steals a tap. The hero is full-height on your first visits, then collapses to a compact bar after three — first-run users get orientation, returning users get straight to the feed. A persistent labeled nav keeps navigation recognition, not recall.",
+    body: "The product had drifted into three different auth screens and half a dozen button styles. I ran a design audit and collapsed it into one system: a single accent (brick rose), a formalized type scale pairing a Cormorant display face with Inter, a letterspaced Inter-caps eyebrow, and one hard rule for shape: squares for containers, pills for actions. Then I tuned it against how hands and attention actually behave. Touch targets went to a 44px minimum (Fitts's Law); the bottom nav sits at 60px with safe-area insets so the home bar never steals a tap. The hero is full-height on your first visits, then collapses to a compact bar after three. First-run users get orientation, returning users get straight to the feed. A persistent labeled nav keeps navigation recognition, not recall.",
     shots: [
       {
         src: "/vue-mobile-feed-cards.png",
-        alt: "The feed's consistent card rhythm — one type scale and single accent across every brand.",
+        alt: "The feed's consistent card rhythm: one type scale and single accent across every brand.",
       },
       {
         src: "/vue-mobile-brands.png",
@@ -39,11 +39,11 @@ const contributions = [
     no: "03",
     tag: "Accessibility & rigor",
     title: "No dead ends, and it passes AA",
-    body: "The unglamorous half of human factors is error states and access. Empty feeds never dead-end — a quiet feed says “your brands are quiet,” and users following zero brands land on Discover instead of a blank screen. Every error announces itself with role=“alert”; the auth modal traps focus, returns it on close, and closes on Escape. I set WCAG 2.1 AA as the bar and drove a remediation pass across 33 files — roughly 158 contrast fixes — plus skip-to-content, main landmarks, and a prefers-reduced-motion override. I specified the standard and the behavior; the AI tooling I direct executed the contrast math, the ARIA plumbing, and the React. The judgment is mine — what's a wall versus an invite, what counts as P0, how the system should behave.",
+    body: "The unglamorous half of human factors is error states and access. Empty feeds never dead-end: a quiet feed says “your brands are quiet,” and users following zero brands land on Discover instead of a blank screen. Every error announces itself with role=“alert”; the auth modal traps focus, returns it on close, and closes on Escape. I set WCAG 2.1 AA as the bar and drove a remediation pass across 33 files (roughly 158 contrast fixes), plus skip-to-content, main landmarks, and a prefers-reduced-motion override. I specified the standard and the behavior; the AI tooling I direct executed the contrast math, the ARIA plumbing, and the React. The judgment is mine: what's a wall versus an invite, what counts as P0, how the system should behave.",
     shots: [
       {
         src: "/vue-mobile-feed-scale.png",
-        alt: "The feed's weekly roll-up — legible hierarchy and AA-contrast type across dozens of brands.",
+        alt: "The feed's weekly roll-up: legible hierarchy and AA-contrast type across dozens of brands.",
       },
     ],
   },
@@ -67,7 +67,7 @@ export default function CaseStudyVue() {
             <Reveal delay={0.1}>
               <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink/55">
                 A live fashion-discovery product. I own the product thinking, the
-                design system, and the human-factors calls — then direct AI
+                design system, and the human-factors calls, then direct AI
                 tooling to build it in React. It&apos;s in production, with real
                 users, monetized.
               </p>

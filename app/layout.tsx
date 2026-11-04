@@ -47,7 +47,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Grayson Iller — Design engineer who designs the product and ships the code.",
+        alt: "Grayson Iller: design engineer who designs the product and ships the code.",
       },
     ],
   },

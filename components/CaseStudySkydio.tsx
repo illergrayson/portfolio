@@ -14,8 +14,8 @@ const pipeline = [
   { name: "Validation strategy", note: "What gets validated, in what order, against what risk", own: true },
   { name: "Dogfooding", note: "Pre-release builds in real workflows", own: true },
   { name: "Bug scrubs", note: "Severity argued on evidence", own: true },
-  { name: "Release risk review", note: "The picture leadership reads — risk, honestly stated", own: true },
-  { name: "Final pack", note: "Regression, smoke, sanity — the final bar", own: true },
+  { name: "Release risk review", note: "The picture leadership reads: risk, honestly stated", own: true },
+  { name: "Final pack", note: "Regression, smoke, sanity: the final bar", own: true },
   { name: "Ship", note: "A decision made on evidence, not optimism", own: false },
 ];
 
@@ -69,7 +69,7 @@ const frictions = [
   {
     moment: "Pre-flight readiness",
     expects: "A clear go / no-go",
-    breaks: "Ambiguous state between checks — waiting, working, or stuck?",
+    breaks: "Ambiguous state between checks: waiting, working, or stuck?",
     call: "Name the state and show what’s blocking it",
   },
   {
@@ -89,12 +89,12 @@ const decisions = [
   {
     finding: "Ugly but recoverable",
     bar: "Pattern across builds, no data or mission loss",
-    call: "Ships with a fix scheduled — and said out loud",
+    call: "Ships with a fix scheduled, and said out loud",
   },
   {
     finding: "Cosmetic, one-off",
     bar: "No reproduction after honest effort",
-    call: "Ships, tracked — engineering time goes elsewhere",
+    call: "Ships, tracked; engineering time goes elsewhere",
   },
 ];
 
@@ -165,7 +165,7 @@ export default function CaseStudySkydio() {
         </Reveal>
         <Reveal delay={0.1}>
           <p className="mt-4 max-w-2xl text-lg text-ink/55">
-            Four years of flight test at Skydio — across drone platforms,
+            Three-plus years of flight test at Skydio, across drone platforms,
             multiple controller hardware generations, and four parallel release
             programs, for operators flying public-safety, inspection, and
             defense missions. I own release validation for the controller
@@ -256,7 +256,7 @@ export default function CaseStudySkydio() {
                 An interface can be technically correct and still lie. I modeled
                 controller-to-drone connectivity as a finite state machine and
                 documented every state where the screen says
-                &ldquo;connected&rdquo; while the link underneath is degraded —
+                &ldquo;connected&rdquo; while the link underneath is degraded,
                 then made those states testable, so ambiguity gets caught before
                 an operator meets it mid-mission. An operator who&apos;s been
                 surprised by the screen once stops trusting it and starts
@@ -265,7 +265,7 @@ export default function CaseStudySkydio() {
               </p>
               <ArtifactShell
                 label="Recreated artifact · Where mental models break"
-                caption="An anonymized pattern, not product internals — the moments I watch for when validating an operator-facing build."
+                caption="An anonymized pattern, not product internals: the moments I watch for when validating an operator-facing build."
               >
                 <div className="space-y-4">
                   {frictions.map((f) => (
@@ -302,16 +302,16 @@ export default function CaseStudySkydio() {
             <>
               <p className="mt-3 max-w-2xl text-[1.0rem] leading-relaxed text-ink/55">
                 I inherited 5,500+ test cases organized the way the engineering
-                org is organized — by subsystem. Complete coverage, no view of
+                org is organized: by subsystem. Complete coverage, no view of
                 the experience. I reorganized validation around how operators
                 actually work: journeys, in sequence, across drone platforms.
-                The gaps between steps became visible — and the gaps are where
+                The gaps between steps became visible, and the gaps are where
                 products fail. The journey structure is now the template for
                 how coverage is organized across platforms.
               </p>
               <ArtifactShell
                 label="Recreated artifact · Information architecture, before / after"
-                caption="Same 5,500+ cases, two shapes. Organized by subsystem, the experience is invisible; organized by journey, the gaps between steps become visible — and testable."
+                caption="Same 5,500+ cases, two shapes. Organized by subsystem, the experience is invisible; organized by journey, the gaps between steps become visible and testable."
               >
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="rounded-lg border border-line p-5">
@@ -358,7 +358,7 @@ export default function CaseStudySkydio() {
                 A release is hundreds of judgment calls made under deadline. I
                 built the cadence that grounds those calls in evidence: bug
                 scrubs where severity is argued against reproduction, logs, and
-                user impact — not volume — and program reviews that give
+                user impact (not volume), and program reviews that give
                 leadership an honest picture of risk. I&apos;ve run this across
                 four programs at once: new hardware bring-up, GA validation,
                 hardware reliability, and the first controller-only software
@@ -398,12 +398,12 @@ export default function CaseStudySkydio() {
           >
             <>
               <p className="mt-3 max-w-2xl text-[1.0rem] leading-relaxed text-ink/55">
-                Dogfooding isn&apos;t a calendar event — it&apos;s how the
+                Dogfooding isn&apos;t a calendar event. It&apos;s how the
                 product learns. I run the loop that puts pre-release builds into
                 real workflows and moves what we observe into engineering
                 priorities: captured with logs and user impact, triaged pattern
                 from one-off, validated, and back into the field. I run it with
-                product, design, engineering, and program management — it&apos;s
+                product, design, engineering, and program management. It&apos;s
                 how ambiguous feedback becomes an engineering priority instead
                 of a Slack thread.
               </p>
@@ -464,7 +464,7 @@ export default function CaseStudySkydio() {
         <Reveal delay={0.1}>
           <p className="mt-12 max-w-prose text-[1.05rem] leading-relaxed text-ink/55">
             The through-line: modeling how a system actually behaves is how you
-            design an interface that tells the truth — and designing how a team
+            design an interface that tells the truth, and designing how a team
             learns about its product is how you ship one people can trust.
             That&apos;s the same instinct that built VUE.
           </p>

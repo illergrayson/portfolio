@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 const facts = [
   {
     k: "Education",
-    v: "B.S. Human Factors Engineering in Aerospace Physiology, Embry-Riddle Aeronautical University (2019–2023)",
+    v: "B.S. Human Factors Psychology (HCI focus), Minor in Aerospace Physiology, Embry-Riddle Aeronautical University (2023)",
   },
   {
     k: "Now",
@@ -68,9 +68,7 @@ export default function About() {
                   system, conversion UX, database, scrapers, deploys. It tracks
                   fashion drops from{" "}
                   <span className="text-ink/85">100+ brands</span> into a single
-                  feed, live in production with real users. Design taste and
-                  engineering depth aren&apos;t two skills I toggle between.
-                  They&apos;re one practice.
+                  feed, live in production with real users.
                 </p>
               </Reveal>
             </div>
