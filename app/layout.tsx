@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og.png",
+        url: "/og.jpg",
         width: 1200,
         height: 630,
         alt: "Grayson Iller: design engineer who designs the product and ships the code.",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     title: "Grayson Iller · Design Engineer",
     description:
       "Design engineer at the seam of product design and front-end systems. Creator of VUE.",
-    images: ["/og.png"],
+    images: ["/og.jpg"],
   },
   icons: {
     icon: "/favicon.svg",

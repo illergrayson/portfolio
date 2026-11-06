@@ -3,9 +3,9 @@ import PhoneFrame from "./PhoneFrame";
 import { site } from "@/lib/site";
 
 const shots = [
-  { src: "/vue-mobile-landing.png", alt: "VUE landing page on mobile" },
-  { src: "/vue-mobile-feed.png", alt: "The VUE feed, open to anyone" },
-  { src: "/vue-mobile-brands.png", alt: "VUE brand directory" },
+  { src: "/vue-mobile-landing.jpg", alt: "VUE landing page on mobile" },
+  { src: "/vue-mobile-feed.jpg", alt: "The VUE feed, open to anyone" },
+  { src: "/vue-mobile-brands.jpg", alt: "VUE brand directory" },
 ];
 
 const wins = [
