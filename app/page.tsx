@@ -15,7 +15,7 @@ const jsonLd = {
   jobTitle: "Design Engineer",
   address: {
     "@type": "PostalPlace",
-    addressLocality: "San Mateo",
+    addressLocality: "Redwood City",
     addressRegion: "CA",
   },
   email: site.email,
@@ -38,8 +38,8 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <CaseStudyVue />
         <CaseStudySkydio />
+        <CaseStudyVue />
         <AlsoSection />
         <Contact />
       </main>

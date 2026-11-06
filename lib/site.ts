@@ -1,7 +1,7 @@
 export const site = {
   name: "Grayson Iller",
   title: "Design Engineer",
-  location: "San Mateo, CA",
+  location: "Redwood City, CA",
   email: "Graysoniller@outlook.com",
   links: {
     linkedin: "https://linkedin.com/in/grayson-iller-a119b2202",
@@ -13,9 +13,8 @@ export const site = {
 };
 
 export const nav = [
-  { label: "About", href: "#about" },
-  { label: "VUE", href: "#vue" },
   { label: "Skydio", href: "#skydio" },
-  { label: "More", href: "#more" },
+  { label: "VUE", href: "#vue" },
+  { label: "Off the clock", href: "#more" },
   { label: "Contact", href: "#contact" },
 ];

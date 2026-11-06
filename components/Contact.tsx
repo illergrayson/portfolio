@@ -50,14 +50,13 @@ export default function Contact() {
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="mt-5 max-w-3xl text-balance text-[clamp(2rem,5vw,3.4rem)] font-semibold leading-[1.05] tracking-[-0.025em] text-gradient">
-            Looking for someone who can design it{" "}
-            <span className="text-gradient-accent">and</span> build it?
+            Want to talk?
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
           <p className="mt-5 max-w-prose text-lg text-ink/55">
-            I&apos;m open to design engineering roles. Based in {site.location},
-            open to remote. The fastest way to reach me is email.
+            UX engineering, product design, and human factors roles. Based in{" "}
+            {site.location}. Email is fastest.
           </p>
         </Reveal>
 

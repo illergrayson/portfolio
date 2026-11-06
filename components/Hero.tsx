@@ -6,18 +6,11 @@ import { site } from "@/lib/site";
 
 const container = {
   hidden: {},
-  show: {
-    transition: { staggerChildren: 0.09, delayChildren: 0.1 },
-  },
+  show: { transition: { staggerChildren: 0.09, delayChildren: 0.1 } },
 };
-
 const item = {
   hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] },
-  },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] } },
 };
 
 export default function Hero() {
@@ -26,11 +19,7 @@ export default function Hero() {
 
   useEffect(() => {
     controls.start("show");
-    // Reliability fallback: if the tab is backgrounded or loads out of focus,
-    // framer-motion pauses its render loop and the hero can stay blank — the
-    // first thing a visitor sees. After a short delay, snap framer to its final
-    // state AND write the final style straight to each animated child (a direct
-    // DOM write applies even while the document is hidden, when framer won't).
+    // If the tab loads out of focus framer can leave the hero blank; snap to final state.
     const t = setTimeout(() => {
       controls.set("show");
       const el = ref.current;
@@ -46,24 +35,7 @@ export default function Hero() {
   }, [controls]);
 
   return (
-    <section
-      id="top"
-      className="relative flex min-h-[92vh] items-center overflow-hidden px-6 pt-24"
-    >
-      {/* faint grid */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.18]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(28,25,23,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.04) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-          maskImage:
-            "radial-gradient(60% 60% at 50% 40%, black, transparent 100%)",
-          WebkitMaskImage:
-            "radial-gradient(60% 60% at 50% 40%, black, transparent 100%)",
-        }}
-      />
-
+    <section id="top" className="relative overflow-hidden px-6 pt-28 pb-10">
       <motion.div
         ref={ref}
         variants={container}
@@ -83,77 +55,65 @@ export default function Hero() {
 
         <motion.h1
           variants={item}
-          className="mt-7 max-w-5xl text-[clamp(2.8rem,8vw,6.5rem)] font-semibold leading-[0.96] tracking-[-0.03em] text-gradient"
+          className="mt-7 text-[clamp(2.8rem,8vw,6.5rem)] font-semibold leading-[0.96] tracking-[-0.03em] text-ink"
         >
           Grayson Iller
         </motion.h1>
 
         <motion.p
           variants={item}
-          className="mt-5 text-[clamp(1.1rem,2.6vw,1.65rem)] font-medium tracking-tight text-ink/55"
+          className="mt-5 max-w-3xl text-[clamp(1.15rem,2.6vw,1.75rem)] font-medium leading-snug tracking-tight text-ink/70"
         >
-          <span className="text-gradient-accent">Design engineer</span>
-          {" "}who designs the product and ships the code.
-        </motion.p>
-
-        <motion.p
-          variants={item}
-          className="mt-7 max-w-prose text-base leading-relaxed text-ink/55 sm:text-lg"
-        >
-          Human factors background, systems experience at Skydio, and{" "}
+          I lead flight test for the controller on Skydio drones. I designed
+          and built{" "}
           <a
             href={site.links.vue}
             target="_blank"
             rel="noreferrer"
-            className="text-ink/85 underline decoration-ink/20 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent/60"
+            className="text-ink underline decoration-accent/50 underline-offset-4 hover:text-accent"
           >
             VUE
-          </a>
-          , a fashion drop platform designed and built solo from blank Figma to
-          production.
+          </a>{" "}
+          by myself. I studied how people perform under pressure, then went to
+          work on products where that matters.
         </motion.p>
 
-        <motion.div
-          variants={item}
-          className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4"
-        >
+        <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
           <a
-            href="#vue"
-            className="group inline-flex items-center gap-2.5 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-[#FAF8F5] tracking-tight transition-all hover:bg-accent"
+            href="#skydio"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-ink px-6 py-3 text-sm font-semibold tracking-tight text-[#FAF8F5] transition-all hover:bg-accent"
           >
             See the work
-            <span className="transition-transform group-hover:translate-x-1">
-              →
-            </span>
+            <span className="transition-transform group-hover:translate-x-1">→</span>
           </a>
-          <a
-            href={site.links.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 border-b border-ink/20 pb-0.5 text-sm text-ink/55 transition-colors hover:border-accent hover:text-ink"
-          >
+          <a href={site.links.linkedin} target="_blank" rel="noreferrer" className="border-b border-ink/20 pb-0.5 text-sm text-ink/55 hover:border-accent hover:text-ink">
             LinkedIn ↗
           </a>
-          <a
-            href={site.links.email}
-            className="inline-flex items-center gap-2 border-b border-ink/20 pb-0.5 text-sm text-ink/55 transition-colors hover:border-accent hover:text-ink"
-          >
+          <a href={site.links.email} className="border-b border-ink/20 pb-0.5 text-sm text-ink/55 hover:border-accent hover:text-ink">
             Email
           </a>
-          <a
-            href={site.links.vue}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 border-b border-ink/20 pb-0.5 text-sm text-ink/55 transition-colors hover:border-accent hover:text-ink"
-          >
-            {site.links.vueLabel} ↗
+          <a href="/grayson-iller-resume.pdf" download className="border-b border-ink/20 pb-0.5 text-sm text-ink/55 hover:border-accent hover:text-ink">
+            Résumé (PDF)
           </a>
         </motion.div>
-      </motion.div>
 
-      <div className="pointer-events-none absolute bottom-8 left-1/2 hidden -translate-x-1/2 sm:block">
-        <div className="h-10 w-[1px] bg-gradient-to-b from-ink/20 to-transparent" />
-      </div>
+        <motion.figure variants={item} className="mt-14">
+          <div className="overflow-hidden rounded-2xl border border-line">
+            <img
+              src="/press/skydio-officer-controller.jpg"
+              alt="A police officer flying a Skydio X10 from the handheld controller"
+              className="aspect-[16/9] w-full object-cover sm:aspect-[21/9]"
+            />
+          </div>
+          <figcaption className="mt-3 flex flex-wrap justify-between gap-2 text-[13px] text-ink/45">
+            <span>
+              The Skydio X10 and its controller in the field. I own release
+              validation for the controller platform.
+            </span>
+            <span>Photo: Skydio</span>
+          </figcaption>
+        </motion.figure>
+      </motion.div>
     </section>
   );
 }
