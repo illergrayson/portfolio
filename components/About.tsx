@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 const stats = [
   { n: "5,500+", l: "test cases written", d: "S2, X2, and X10 Enterprise drones" },
   { n: "4", l: "release programs at once", d: "bring-up, GA, reliability, controller-only" },
-  { n: "<1%", l: "controller RMA rate", d: "hardware reliability work I contributed to" },
+  { n: "34", l: "release sign-offs", d: "credited as tester since 2023" },
   { n: "100+", l: "brands on VUE", d: "scraped daily into one feed, built solo" },
   { n: "2", l: "published papers", d: "lunar landing, spatial disorientation" },
   { n: "3", l: "years at Skydio", d: "intern in 2022, lead today" },

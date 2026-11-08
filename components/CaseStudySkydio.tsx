@@ -6,7 +6,7 @@ const iaAfter = ["Unbox & pair", "Pre-flight checks", "Launch", "Mission", "Inte
 const programs = [
   { name: "C38 controller bring-up", span: "Alpha → Beta", w: "70%", off: "0%" },
   { name: "GA release validation", span: "every release", w: "100%", off: "0%" },
-  { name: "Hardware reliability", span: "RMA under 1%", w: "55%", off: "30%" },
+  { name: "Hardware reliability", span: "RF interference", w: "55%", off: "30%" },
   { name: "First controller-only release", span: "shipped", w: "40%", off: "55%" },
 ];
 
@@ -106,12 +106,12 @@ export default function CaseStudySkydio() {
 
           <Reveal delay={0.05}>
             <Card
-              title="5,500 test cases, reorganized around the operator"
-              caption="Coverage was filed the way the engineering org is organized. I rebuilt it as the sequence an operator actually goes through. The gaps between steps became visible, and that structure is now the template across platforms."
+              title="5,500 test cases, organized around the operator"
+              caption="I built the controller suite as the sequence an operator actually goes through, not as a list of subsystems. When the org restructured it by feature, I wrote the impact assessment: regression went from 3.5 weeks to over 4, and the gaps between steps stopped being visible. I argued it with human factors and data."
             >
               <div className="space-y-4">
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.14em] text-ink/40">Before: by subsystem</p>
+                  <p className="text-[10px] uppercase tracking-[0.14em] text-ink/40">By subsystem</p>
                   <div className="mt-2 flex flex-wrap gap-1.5">
                     {iaBefore.map((m) => (
                       <span key={m} className="rounded-md border border-line px-2 py-1 text-[12px] text-ink/60">{m}</span>
@@ -119,7 +119,7 @@ export default function CaseStudySkydio() {
                   </div>
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.14em] text-accent">After: by journey</p>
+                  <p className="text-[10px] uppercase tracking-[0.14em] text-accent">By operator journey (mine)</p>
                   <div className="mt-2 space-y-1">
                     {iaAfter.map((s, i) => (
                       <div key={s} className="flex items-center gap-2.5">
@@ -137,7 +137,7 @@ export default function CaseStudySkydio() {
           <Reveal delay={0.1}>
             <Card
               title="Four programs at once, one test lead"
-              caption="New hardware bring-up from Alpha through Beta, GA validation on every release, the reliability work that got controller RMAs under 1%, and the first release that shipped controller software on its own."
+              caption="New hardware bring-up from Alpha through Beta, GA validation on every release, the radio-interference work behind the controller hardware rework, and the first release that shipped controller software on its own."
             >
               <div className="space-y-3">
                 {programs.map((p) => (
