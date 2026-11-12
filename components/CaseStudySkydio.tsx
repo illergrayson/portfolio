@@ -158,10 +158,10 @@ export default function CaseStudySkydio() {
           </div>
         </Reveal>
 
-        {/* 4c: journey, option B */}
+        {/* 4c: journey, option A, past tense */}
         <Reveal delay={0.1}>
           <div className="surface mt-4 p-6 sm:p-7">
-            <h3 className="text-lg font-semibold tracking-tight text-ink">How I walk a new feature</h3>
+            <h3 className="text-lg font-semibold tracking-tight text-ink">Critical user journeys on the controller</h3>
             <div className="mt-4 flex flex-wrap items-center gap-y-2">
               {journey.map((step, i) => (
                 <span key={step} className="flex items-center">
@@ -171,10 +171,12 @@ export default function CaseStudySkydio() {
               ))}
             </div>
             <p className="mt-4 text-[0.9rem] leading-relaxed text-ink/55">
-              When I review a new controller feature I walk it the way an
-              operator meets it: unbox and pair, pre-flight, launch, mission,
-              interrupt and recover, return and review. Most of the problems I
-              find live in the gaps between those steps.
+              I built the controller test suite in the order an operator meets
+              the product: unbox and pair, pre-flight, launch, mission,
+              interrupt and recover, return and review. Written that way, the
+              gaps between steps are visible. When the suite was later
+              restructured by feature, I measured what it cost: full regression
+              went from about 3.5 weeks to over 4.
             </p>
           </div>
         </Reveal>
