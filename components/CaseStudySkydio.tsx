@@ -134,7 +134,7 @@ export default function CaseStudySkydio() {
                 <div>
                   <p className="text-[11px] uppercase tracking-[0.14em] text-ink/40">Evidence</p>
                   <p className="mt-1.5 text-[0.95rem] leading-relaxed text-ink/65">
-                    [PLACEHOLDER: evidence, 1 to 2 sentences]
+                    I filed both problems in July 2026 while testing the pairing flow. Neither has been picked up yet, so I redesigned them myself.
                   </p>
                 </div>
                 <div>
