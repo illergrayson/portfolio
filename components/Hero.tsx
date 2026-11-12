@@ -44,12 +44,8 @@ export default function Hero() {
         className="relative mx-auto w-full max-w-content"
       >
         <motion.div variants={item}>
-          <span className="inline-flex items-center gap-2 rounded-full border border-line bg-ink-50 px-3.5 py-1.5 text-xs text-ink/55">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
-            </span>
-            Open to new opportunities
+          <span className="inline-flex items-center rounded-full border border-line bg-ink-50 px-3.5 py-1.5 text-xs text-ink/55">
+            Product design · Human factors · FAA Part 107
           </span>
         </motion.div>
 
@@ -64,8 +60,8 @@ export default function Hero() {
           variants={item}
           className="mt-5 max-w-3xl text-[clamp(1.15rem,2.6vw,1.75rem)] font-medium leading-snug tracking-tight text-ink/70"
         >
-          I lead flight test for the controller on Skydio drones. I designed
-          and built{" "}
+          I design for operators under pressure. Human factors by training,
+          three years validating the Skydio controller in the field, and{" "}
           <a
             href={site.links.vue}
             target="_blank"
@@ -73,9 +69,8 @@ export default function Hero() {
             className="text-ink underline decoration-accent/50 underline-offset-4 hover:text-accent"
           >
             VUE
-          </a>{" "}
-          by myself. I studied how people perform under pressure, then went to
-          work on products where that matters.
+          </a>
+          , a fashion feed I designed in Figma and built solo.
         </motion.p>
 
         <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
@@ -107,8 +102,8 @@ export default function Hero() {
           </div>
           <figcaption className="mt-3 flex flex-wrap justify-between gap-2 text-[13px] text-ink/45">
             <span>
-              The Skydio X10 and its controller in the field. I own release
-              validation for the controller platform.
+              The Skydio X10 and its controller in the field. The screen in
+              the operator&apos;s hands is the one I work on.
             </span>
             <span>Photo: Skydio</span>
           </figcaption>

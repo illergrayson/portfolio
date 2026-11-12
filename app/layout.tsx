@@ -20,12 +20,12 @@ const siteUrl = "https://portfolio-eta-rose-i4vh5pmjy6.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Grayson Iller · Design Engineer",
+  title: "Grayson Iller · Product Design, Human Factors",
   description:
-    "Design engineer working at the seam of product design and front-end systems. Human factors background, systems experience at Skydio, and VUE, a fashion drop platform designed and built solo.",
+    "Product designer with a human factors background. Three years validating the Skydio controller in the field, and VUE, a fashion feed designed in Figma and built solo.",
   keywords: [
     "Grayson Iller",
-    "Design Engineer",
+    "Product Designer",
     "Product Designer",
     "Front-end Engineer",
     "Human Factors",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Grayson Iller" }],
   openGraph: {
-    title: "Grayson Iller · Design Engineer",
+    title: "Grayson Iller · Product Design, Human Factors",
     description:
       "Design engineer at the seam of product design and front-end systems. Creator of VUE (vueniverse.com).",
     url: siteUrl,
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grayson Iller · Design Engineer",
+    title: "Grayson Iller · Product Design, Human Factors",
     description:
       "Design engineer at the seam of product design and front-end systems. Creator of VUE.",
     images: ["/og.jpg"],

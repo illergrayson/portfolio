@@ -1,12 +1,10 @@
 import Reveal from "./Reveal";
 
 const stats = [
-  { n: "5,500+", l: "test cases written", d: "S2, X2, and X10 Enterprise drones" },
-  { n: "4", l: "release programs at once", d: "bring-up, GA, reliability, controller-only" },
-  { n: "34", l: "release sign-offs", d: "credited as tester since 2023" },
-  { n: "100+", l: "brands on VUE", d: "scraped daily into one feed, built solo" },
-  { n: "2", l: "published papers", d: "lunar landing, spatial disorientation" },
-  { n: "3", l: "years at Skydio", d: "intern in 2022, lead today" },
+  { n: "190+", l: "UX critiques filed", d: "on the controller I test, as tickets engineering could act on" },
+  { n: "4", l: "controller UI changes shipped", d: "from proposals I wrote, with the design and mobile teams" },
+  { n: "100+", l: "brands on VUE", d: "a product I designed, built, and run solo" },
+  { n: "2", l: "published papers", d: "pilot fatigue for lunar landing, spatial disorientation" },
 ];
 
 export default function About() {
@@ -16,7 +14,7 @@ export default function About() {
         <Reveal>
           <p className="eyebrow">At a glance</p>
         </Reveal>
-        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-8 grid grid-cols-2 gap-3 lg:grid-cols-4">
           {stats.map((s, i) => (
             <Reveal key={s.l} delay={i * 0.04}>
               <div className="surface h-full p-5">
@@ -32,10 +30,11 @@ export default function About() {
 
         <Reveal delay={0.1}>
           <p className="mt-10 max-w-prose text-base leading-relaxed text-ink/60 sm:text-[1.05rem]">
-            B.S. Human Factors Psychology, Embry-Riddle, 2023. Flight Test
-            Engineer Lead on the Device Platform team at Skydio, where I own
-            controller validation and manage a direct report. Nights and
-            weekends I run VUE. Based in Redwood City, CA.
+            B.S. Human Factors Psychology, Embry-Riddle, 2023. At Skydio since
+            2022, first as an intern and then leading controller validation on
+            the Device Platform team. I spend my days watching operators use
+            the product and writing down where the interface and the system
+            disagree. Based in Redwood City, CA.
           </p>
         </Reveal>
       </div>
