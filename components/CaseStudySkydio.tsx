@@ -107,7 +107,7 @@ export default function CaseStudySkydio() {
           <Reveal delay={0.05}>
             <Card
               title="5,500 test cases, organized around the operator"
-              caption="I built the controller suite as the sequence an operator actually goes through, not as a list of subsystems. When the org restructured it by feature, I wrote the impact assessment: regression went from 3.5 weeks to over 4, and the gaps between steps stopped being visible. I argued it with human factors and data."
+              caption="I built the controller suite as the sequence an operator actually goes through, not as a list of subsystems. Unbox, pair, pre-flight, launch, mission, interrupt, recover, review. Written that way, the gaps between steps are visible, and a test case reads like a user story. When the structure was debated, I made the case with human factors and regression-time data."
             >
               <div className="space-y-4">
                 <div>
