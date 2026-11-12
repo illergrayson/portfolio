@@ -41,8 +41,7 @@ export default function AlsoSection() {
         <Reveal delay={0.1}>
           <p className="mt-12 text-[0.9rem] leading-relaxed text-ink/45">
             Off the clock: NCAA D2 cross country and track, Olympic-distance
-            triathlete, FAA Part 107 pilot, PADI diver. Jacksonville, FL
-            raised; Redwood City now. Working on the private pilot license.
+            triathlon, PADI diver, working toward a private pilot license.
           </p>
         </Reveal>
       </div>

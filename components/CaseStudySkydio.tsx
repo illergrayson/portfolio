@@ -1,25 +1,27 @@
 import Reveal from "./Reveal";
 
-const journey = ["Unbox and pair", "Pre-flight checks", "Launch", "Mission", "Interrupt and recover", "Return and review"];
+const journey = ["Unbox and pair", "Pre-flight", "Launch", "Mission", "Interrupt and recover", "Return and review"];
 
-const mismatches = [
-  { sees: "Green, full bars", is: "Link weak, not yet switched", cost: "Flies further than the link supports" },
-  { sees: "Green", is: "Telemetry only, commands dropped", cost: "Inputs ignored, no explanation" },
-  { sees: "Green", is: "Media queued, not uploading", cost: "Thinks the evidence is saved" },
-  { sees: "Red", is: "Reconnecting, briefly", cost: "Aborts a mission that would have recovered" },
-];
-
-function Card({ title, caption, children }: { title: string; caption: string; children: React.ReactNode }) {
+function Card({ title, caption, children, tag }: { title: string; caption?: string; children?: React.ReactNode; tag?: string }) {
   return (
     <div className="surface flex h-full flex-col p-6 sm:p-7">
+      {tag ? <p className="mb-2 text-[10px] uppercase tracking-[0.16em] text-accent">{tag}</p> : null}
       <h3 className="text-lg font-semibold tracking-tight text-ink">{title}</h3>
-      <div className="my-5 flex-1">{children}</div>
-      <p className="text-[0.9rem] leading-relaxed text-ink/55">{caption}</p>
+      {children ? <div className="my-5 flex-1">{children}</div> : null}
+      {caption ? <p className="text-[0.9rem] leading-relaxed text-ink/55">{caption}</p> : null}
     </div>
   );
 }
 
-function StateMachine() {
+function ImageSlot({ label }: { label: string }) {
+  return (
+    <div className="flex aspect-[16/10] w-full items-center justify-center rounded-xl border border-dashed border-ink/20 bg-ink-50 text-center text-[12px] text-ink/40" role="img" aria-label={label}>
+      <span className="px-4">{label}</span>
+    </div>
+  );
+}
+
+function ConnectionDiagram() {
   const node = (x: number, label: string, sub: string, hot?: boolean) => (
     <g>
       <rect x={x} y={34} width={120} height={56} rx={12} fill={hot ? "rgba(194,114,78,0.12)" : "rgba(28,25,23,0.03)"} stroke={hot ? "#C2724E" : "rgba(28,25,23,0.18)"} strokeWidth={hot ? 1.5 : 1} />
@@ -34,7 +36,7 @@ function StateMachine() {
     </g>
   );
   return (
-    <svg viewBox="0 0 420 130" className="w-full" role="img" aria-label="State diagram: connected, degraded, lost. The degraded state is highlighted because the UI reported it as connected.">
+    <svg viewBox="0 0 420 130" className="w-full" role="img" aria-label="Connection diagram: connected, degraded, lost. The degraded state is highlighted because the screen showed it as connected.">
       <defs>
         <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
           <path d="M0 0L10 5L0 10z" fill="rgba(28,25,23,0.35)" />
@@ -56,20 +58,20 @@ export default function CaseStudySkydio() {
     <section id="skydio" className="scroll-mt-24 border-t border-line px-6 py-20">
       <div className="mx-auto max-w-content">
         <Reveal>
-          <p className="eyebrow">Skydio · controller · 2022 to now</p>
+          <p className="eyebrow">Skydio · 2022 to now</p>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="mt-4 max-w-3xl text-[clamp(2rem,5vw,3.4rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-ink">
-            The controller told operators they were connected. They weren&apos;t.
+            The controller said connected. It wasn&apos;t.
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink/60">
             The people flying these are police officers, firefighters,
-            inspectors, and soldiers. I mapped every link state against what
-            the screen showed and found where the two disagreed. Working with
-            the design and mobile engineering teams, the UI now shows link
-            health instead of link existence.
+            inspectors, and soldiers. My job puts me on the controller before
+            they are. I look for the moments where what the screen says and
+            what the system is doing come apart, and I work with design and
+            engineering to close them.
           </p>
         </Reveal>
 
@@ -88,77 +90,98 @@ export default function CaseStudySkydio() {
         </div>
         <p className="mt-2 text-right text-[12px] text-ink/35">Photos: Skydio</p>
 
+        {/* 4a: connection state */}
         <div className="mt-12 grid gap-4 lg:grid-cols-2">
           <Reveal>
             <Card
-              title="The problem: three states, one icon"
-              caption="The controller switches between direct radio and cellular automatically. Between a good link and a lost one there are states where the link is weak, or telemetry arrives but commands don't, and the screen showed all of them as connected. I wrote the state model down and shared it, so design, engineering, and test were arguing about the same picture."
+              tag="Case study 1"
+              title="Connection state"
+              caption="The link between controller and drone has more than two states, but parts of the UI only showed two. I found and documented the cases where the screen showed a drone as on or connected when it was off, unpaired, or out of reach, including one where an offline drone could still be selected to fly. Each one was filed with repro steps and closed. The connection state model itself belongs to the wireless team. My part was showing where the interface didn't reflect it."
             >
-              <StateMachine />
+              <ConnectionDiagram />
             </Card>
           </Reveal>
 
+          {/* 4d: warnings under stress */}
           <Reveal delay={0.05}>
             <Card
-              title="The evidence: what the operator saw vs. what was true"
-              caption="Each row became a scenario with its own expected UI. Severity was argued on operator impact: a wrong green costs more than a dropped frame."
-            >
-              <table className="w-full text-[13px]">
-                <thead>
-                  <tr className="text-left text-[10px] uppercase tracking-[0.12em] text-ink/40">
-                    <th className="pb-2 pr-3 font-medium">Operator sees</th>
-                    <th className="pb-2 pr-3 font-medium">System state</th>
-                    <th className="pb-2 font-medium">Cost</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {mismatches.map((m) => (
-                    <tr key={m.is} className="border-t border-line align-top">
-                      <td className="py-2 pr-3 text-ink/75">{m.sees}</td>
-                      <td className="py-2 pr-3 font-medium text-accent">{m.is}</td>
-                      <td className="py-2 text-ink/55">{m.cost}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </Card>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <Card
-              title="What I proposed, and what shipped"
-              caption="Four controller UI changes came out of proposals I wrote: a lost-link alert for radio interference, a warning before power-cycling mid-flight, hiding stale link stats when the link is down, and clearer update copy. The remaining one, a dedicated state for connected-but-not-controllable, is in the backlog with my sentence as its problem statement."
-            >
-              <ul className="space-y-2 text-[14px] text-ink/75">
-                <li className="flex gap-2.5"><span className="text-accent">1</span>Show link health, not link existence: a degraded state before the failure state, in the same place every time.</li>
-                <li className="flex gap-2.5"><span className="text-accent">2</span>Make the switch visible and short: what still works while it happens.</li>
-                <li className="flex gap-2.5"><span className="text-accent">3</span>Separate control, telemetry, and media status when they diverge; collapse them when they agree.</li>
-                <li className="flex gap-2.5"><span className="text-accent">4</span>When the link returns, say what happened while it was gone.</li>
-              </ul>
-            </Card>
-          </Reveal>
-
-          <Reveal delay={0.15}>
-            <Card
-              title="I rebuilt the controller test suite around the operator&apos;s journey"
-              caption="Coverage used to be filed by subsystem: radio, power, UI, storage. I rewrote it as the sequence an operator lives through, so each step reads like a user story and the gaps between steps are visible. It's the same map a journey map draws, and it's where most of the 190 critiques came from."
-            >
-              <div className="space-y-1.5">
-                {journey.map((s, i) => (
-                  <div key={s} className="flex items-center gap-2.5">
-                    <span className="font-serif text-[0.9rem] text-accent/80">{i + 1}</span>
-                    <span className="text-[14px] text-ink/80">{s}</span>
-                    <span className="h-px flex-1 bg-line" />
-                  </div>
-                ))}
-              </div>
-            </Card>
+              tag="Case study 3"
+              title="Warnings under stress"
+              caption="When the controller detects strong radio interference it disables some buttons and warns the pilot. I documented exactly how that alert behaves in flight: when it appears, when it clears, and what happens after it's dismissed. I also tracked down cases where it fired with no radio nearby. A warning that cries wolf teaches people to ignore it."
+            />
           </Reveal>
         </div>
 
+        {/* 4b: pairing redesign, the design piece, most room */}
         <Reveal delay={0.08}>
-          <p className="mt-6 text-[0.85rem] text-ink/45">
-            An interface can be technically correct and still lie. The fix is not a better icon; it&apos;s a screen that reports the state the system is actually in.
+          <div className="surface mt-4 p-6 sm:p-8">
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <p className="text-[10px] uppercase tracking-[0.16em] text-accent">Case study 2 · Self-initiated concept, not shipped work</p>
+            </div>
+            <h3 className="mt-2 text-2xl font-semibold tracking-tight text-ink">Redesigning the pairing success and failure states</h3>
+
+            <div className="mt-6 grid gap-6 lg:grid-cols-5">
+              <div className="space-y-5 lg:col-span-2">
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.14em] text-ink/40">Problem</p>
+                  <p className="mt-1.5 text-[0.95rem] leading-relaxed text-ink/65">
+                    Pairing a drone ends in one of two unclear places. On success,
+                    nothing clearly says it worked. On failure, the message reads
+                    &ldquo;Unable to connect to drone&rdquo;, which sends operators
+                    troubleshooting the wrong thing.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.14em] text-ink/40">Evidence</p>
+                  <p className="mt-1.5 text-[0.95rem] leading-relaxed text-ink/65">
+                    [PLACEHOLDER: evidence, 1 to 2 sentences]
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.14em] text-ink/40">Why</p>
+                  <p className="mt-1.5 text-[0.95rem] leading-relaxed text-ink/65">
+                    [PLACEHOLDER: 2 to 3 sentences on the decisions, written after the Figma work]
+                  </p>
+                </div>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2 lg:col-span-3">
+                <div>
+                  <p className="mb-2 text-[11px] uppercase tracking-[0.14em] text-ink/40">Before</p>
+                  <ImageSlot label="[PLACEHOLDER: Figma export, before]" />
+                </div>
+                <div>
+                  <p className="mb-2 text-[11px] uppercase tracking-[0.14em] text-accent">After</p>
+                  <ImageSlot label="[PLACEHOLDER: Figma export, after]" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* 4c: journey, option B */}
+        <Reveal delay={0.1}>
+          <div className="surface mt-4 p-6 sm:p-7">
+            <h3 className="text-lg font-semibold tracking-tight text-ink">How I walk a new feature</h3>
+            <div className="mt-4 flex flex-wrap items-center gap-y-2">
+              {journey.map((step, i) => (
+                <span key={step} className="flex items-center">
+                  <span className="text-[0.95rem] font-medium tracking-tight text-ink/80">{step}</span>
+                  {i < journey.length - 1 ? <span className="px-2.5 text-accent/60" aria-hidden>→</span> : null}
+                </span>
+              ))}
+            </div>
+            <p className="mt-4 text-[0.9rem] leading-relaxed text-ink/55">
+              When I review a new controller feature I walk it the way an
+              operator meets it: unbox and pair, pre-flight, launch, mission,
+              interrupt and recover, return and review. Most of the problems I
+              find live in the gaps between those steps.
+            </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.12}>
+          <p className="mt-6 text-[0.9rem] text-ink/45">
+            Alongside this I lead controller release validation and manage one direct report.
           </p>
         </Reveal>
       </div>

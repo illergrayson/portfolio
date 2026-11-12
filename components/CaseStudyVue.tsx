@@ -31,8 +31,9 @@ export default function CaseStudyVue() {
         <Reveal delay={0.1}>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink/60">
             Scrapers pull 23,000+ products a day into one recency-ordered feed.
-            Live in production, real users, affiliate revenue. Every screen
-            started in Figma; I write the spec and the design, then build it.
+            Live in production, real users, affiliate revenue. I write the spec
+            and the design first. Then I build with AI tooling in the loop,
+            which lets one person prototype, ship, and test changes in days.
           </p>
         </Reveal>
 
@@ -44,48 +45,44 @@ export default function CaseStudyVue() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid gap-4 lg:grid-cols-5">
-          <Reveal className="lg:col-span-3">
-            <div className="surface h-full p-6 sm:p-7">
-              <p className="text-[11px] uppercase tracking-[0.16em] text-accent">The decision</p>
-              <h3 className="mt-2 text-xl font-semibold tracking-tight text-ink">I tore down the login wall because the data said to</h3>
-              <div className="mt-5 grid grid-cols-2 gap-4">
-                <div>
-                  <p className="text-[2.2rem] font-semibold leading-none tracking-[-0.03em] text-ink">50%</p>
-                  <p className="mt-1.5 text-[13px] text-ink/55">of visitors who opened a product came back</p>
+        <Reveal>
+          <div className="surface mt-12 p-6 sm:p-8">
+            <p className="text-[11px] uppercase tracking-[0.16em] text-accent">The decision</p>
+            <h3 className="mt-2 text-2xl font-semibold tracking-tight text-ink">I tore down the sign-up wall because the data said to</h3>
+            <div className="mt-6 grid gap-6 lg:grid-cols-5">
+              <div className="lg:col-span-2">
+                <p className="text-[11px] uppercase tracking-[0.14em] text-ink/40">What I saw</p>
+                <div className="mt-2 grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-[2.2rem] font-semibold leading-none tracking-[-0.03em] text-ink">50%</p>
+                    <p className="mt-1.5 text-[13px] text-ink/55">of visitors who opened a product came back</p>
+                  </div>
+                  <div>
+                    <p className="text-[2.2rem] font-semibold leading-none tracking-[-0.03em] text-ink/40">6%</p>
+                    <p className="mt-1.5 text-[13px] text-ink/55">of everyone else did</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-[2.2rem] font-semibold leading-none tracking-[-0.03em] text-ink/40">6%</p>
-                  <p className="mt-1.5 text-[13px] text-ink/55">of everyone else did</p>
+                <p className="mt-5 text-[11px] uppercase tracking-[0.14em] text-ink/40">What I changed</p>
+                <p className="mt-1.5 text-[0.95rem] leading-relaxed text-ink/60">
+                  Removed the sign-up wall. The feed is open to anyone, and the
+                  account ask moves to the first follow or save, then runs that
+                  action the instant you&apos;re in. Three auth screens became one.
+                </p>
+                <p className="mt-5 text-[11px] uppercase tracking-[0.14em] text-ink/40">Result</p>
+                <p className="mt-1.5 text-[0.95rem] leading-relaxed text-ink/60">[PLACEHOLDER: result number, if I have one]</p>
+              </div>
+              <div className="lg:col-span-3">
+                <p className="mb-2 text-[11px] uppercase tracking-[0.14em] text-ink/40">Process</p>
+                <div className="flex aspect-[16/9] w-full items-center justify-center rounded-xl border border-dashed border-ink/20 bg-ink-50 text-center text-[12px] text-ink/40" role="img" aria-label="Placeholder for Figma process images">
+                  <span className="px-4">[PLACEHOLDER: Figma flows or early iterations]</span>
                 </div>
               </div>
-              <p className="mt-5 text-[0.95rem] leading-relaxed text-ink/60">
-                The wall stood between people and the one thing that made them
-                return. So the feed is open to anyone, and the account ask
-                moves to the first follow or save, then runs that action the
-                instant you&apos;re in. No lost click, no dead end. Three auth
-                screens became one.
-              </p>
             </div>
-          </Reveal>
-          <Reveal delay={0.05} className="lg:col-span-2">
-            <div className="surface h-full p-6 sm:p-7">
-              <p className="text-[11px] uppercase tracking-[0.16em] text-accent">The system</p>
-              <h3 className="mt-2 text-xl font-semibold tracking-tight text-ink">One accent, one type scale, one shape rule</h3>
-              <p className="mt-4 text-[0.95rem] leading-relaxed text-ink/60">
-                A design audit collapsed six button styles and three auth
-                screens into one system: squares for containers, pills for
-                actions, a persistent labeled nav that clears the home bar.
-                Empty feeds never dead-end; a quiet feed points you to brands
-                to follow.
-              </p>
-              <p className="mt-4 text-[12px] leading-relaxed text-ink/40">
-                Hygiene, for the record: 44 px minimum targets, WCAG 2.1 AA
-                contrast, Lighthouse 97/98. React, TypeScript, Supabase, Vercel.
-              </p>
-            </div>
-          </Reveal>
-        </div>
+            <p className="mt-6 text-[12px] leading-relaxed text-ink/40">
+              44 px touch targets, WCAG 2.1 AA contrast, Lighthouse 97 / 98.
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

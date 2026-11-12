@@ -60,8 +60,9 @@ export default function Hero() {
           variants={item}
           className="mt-5 max-w-3xl text-[clamp(1.15rem,2.6vw,1.75rem)] font-medium leading-snug tracking-tight text-ink/70"
         >
-          I design for operators under pressure. Human factors by training,
-          three years validating the Skydio controller in the field, and{" "}
+          I design for operators under pressure. Human factors by training.
+          Since 2022 I&apos;ve worked on the Skydio controller, finding where
+          the interface and reality disagree. I also designed and built{" "}
           <a
             href={site.links.vue}
             target="_blank"
@@ -70,7 +71,7 @@ export default function Hero() {
           >
             VUE
           </a>
-          , a fashion feed I designed in Figma and built solo.
+          , a fashion-drop feed, solo.
         </motion.p>
 
         <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
@@ -102,8 +103,7 @@ export default function Hero() {
           </div>
           <figcaption className="mt-3 flex flex-wrap justify-between gap-2 text-[13px] text-ink/45">
             <span>
-              The Skydio X10 and its controller in the field. The screen in
-              the operator&apos;s hands is the one I work on.
+              The Skydio X10 and its controller in the field.
             </span>
             <span>Photo: Skydio</span>
           </figcaption>
