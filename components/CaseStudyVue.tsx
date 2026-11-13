@@ -30,7 +30,7 @@ export default function CaseStudyVue() {
         </div>
         <Reveal delay={0.1}>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink/60">
-            Scrapers pull 23,000+ products a day into one recency-ordered feed.
+            Scrapers track 23,000+ products in one recency-ordered feed.
             Live in production, real users, affiliate revenue. I write the spec
             and the design first. Then I build with AI tooling in the loop,
             which lets one person prototype, ship, and test changes in days.
@@ -49,8 +49,8 @@ export default function CaseStudyVue() {
           <div className="surface mt-12 p-6 sm:p-8">
             <p className="text-[11px] uppercase tracking-[0.16em] text-accent">The decision</p>
             <h3 className="mt-2 text-2xl font-semibold tracking-tight text-ink">I tore down the sign-up wall because the data said to</h3>
-            <div className="mt-6 grid gap-6 lg:grid-cols-5">
-              <div className="lg:col-span-2">
+            <div className="mt-6 max-w-xl">
+              <div>
                 <p className="text-[11px] uppercase tracking-[0.14em] text-ink/40">What I saw</p>
                 <div className="mt-2 grid grid-cols-2 gap-4">
                   <div>
@@ -68,14 +68,6 @@ export default function CaseStudyVue() {
                   account ask moves to the first follow or save, then runs that
                   action the instant you&apos;re in. Three auth screens became one.
                 </p>
-                <p className="mt-5 text-[11px] uppercase tracking-[0.14em] text-ink/40">Result</p>
-                <p className="mt-1.5 text-[0.95rem] leading-relaxed text-ink/60">[PLACEHOLDER: result number, if I have one]</p>
-              </div>
-              <div className="lg:col-span-3">
-                <p className="mb-2 text-[11px] uppercase tracking-[0.14em] text-ink/40">Process</p>
-                <div className="flex aspect-[16/9] w-full items-center justify-center rounded-xl border border-dashed border-ink/20 bg-ink-50 text-center text-[12px] text-ink/40" role="img" aria-label="Placeholder for Figma process images">
-                  <span className="px-4">[PLACEHOLDER: Figma flows or early iterations]</span>
-                </div>
               </div>
             </div>
             <p className="mt-6 text-[12px] leading-relaxed text-ink/40">

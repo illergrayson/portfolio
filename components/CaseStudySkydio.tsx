@@ -13,14 +13,6 @@ function Card({ title, caption, children, tag }: { title: string; caption?: stri
   );
 }
 
-function ImageSlot({ label }: { label: string }) {
-  return (
-    <div className="flex aspect-[16/10] w-full items-center justify-center rounded-xl border border-dashed border-ink/20 bg-ink-50 text-center text-[12px] text-ink/40" role="img" aria-label={label}>
-      <span className="px-4">{label}</span>
-    </div>
-  );
-}
-
 function ConnectionDiagram() {
   const node = (x: number, label: string, sub: string, hot?: boolean) => (
     <g>
@@ -96,7 +88,7 @@ export default function CaseStudySkydio() {
             <Card
               tag="Case study 1"
               title="Connection state"
-              caption="The link between controller and drone has more than two states, but parts of the UI only showed two. I found and documented the cases where the screen showed a drone as on or connected when it was off, unpaired, or out of reach, including one where an offline drone could still be selected to fly. Each one was filed with repro steps and closed. The connection state model itself belongs to the wireless team. My part was showing where the interface didn't reflect it."
+              caption="The link between controller and drone has more than two states, but parts of the UI only showed two. I found and documented the cases where the screen showed a drone as on or connected when it was off, unpaired, or out of reach. Each one was filed with repro steps and closed. The connection state model itself belongs to the wireless team. My part was showing where the interface didn't reflect it."
             >
               <ConnectionDiagram />
             </Card>
@@ -105,58 +97,12 @@ export default function CaseStudySkydio() {
           {/* 4d: warnings under stress */}
           <Reveal delay={0.05}>
             <Card
-              tag="Case study 3"
+              tag="Case study 2"
               title="Warnings under stress"
-              caption="When the controller detects strong radio interference it disables some buttons and warns the pilot. I documented exactly how that alert behaves in flight: when it appears, when it clears, and what happens after it's dismissed. I also tracked down cases where it fired with no radio nearby. A warning that cries wolf teaches people to ignore it."
+              caption="When the controller detects strong radio interference it disables some buttons and warns the pilot. I documented exactly how that alert behaves in flight: when it appears, when it clears, and what happens after it's dismissed. I also raised how often it could fire for operators who work next to radios all day. A warning that cries wolf teaches people to ignore it."
             />
           </Reveal>
         </div>
-
-        {/* 4b: pairing redesign, the design piece, most room */}
-        <Reveal delay={0.08}>
-          <div className="surface mt-4 p-6 sm:p-8">
-            <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <p className="text-[10px] uppercase tracking-[0.16em] text-accent">Case study 2 · Self-initiated concept, not shipped work</p>
-            </div>
-            <h3 className="mt-2 text-2xl font-semibold tracking-tight text-ink">Redesigning the pairing success and failure states</h3>
-
-            <div className="mt-6 grid gap-6 lg:grid-cols-5">
-              <div className="space-y-5 lg:col-span-2">
-                <div>
-                  <p className="text-[11px] uppercase tracking-[0.14em] text-ink/40">Problem</p>
-                  <p className="mt-1.5 text-[0.95rem] leading-relaxed text-ink/65">
-                    Pairing a drone ends in one of two unclear places. On success,
-                    nothing clearly says it worked. On failure, the message reads
-                    &ldquo;Unable to connect to drone&rdquo;, which sends operators
-                    troubleshooting the wrong thing.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-[11px] uppercase tracking-[0.14em] text-ink/40">Evidence</p>
-                  <p className="mt-1.5 text-[0.95rem] leading-relaxed text-ink/65">
-                    I filed both problems in July 2026 while testing the pairing flow. Neither has been picked up yet, so I redesigned them myself.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-[11px] uppercase tracking-[0.14em] text-ink/40">Why</p>
-                  <p className="mt-1.5 text-[0.95rem] leading-relaxed text-ink/65">
-                    [PLACEHOLDER: 2 to 3 sentences on the decisions, written after the Figma work]
-                  </p>
-                </div>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2 lg:col-span-3">
-                <div>
-                  <p className="mb-2 text-[11px] uppercase tracking-[0.14em] text-ink/40">Before</p>
-                  <ImageSlot label="[PLACEHOLDER: Figma export, before]" />
-                </div>
-                <div>
-                  <p className="mb-2 text-[11px] uppercase tracking-[0.14em] text-accent">After</p>
-                  <ImageSlot label="[PLACEHOLDER: Figma export, after]" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </Reveal>
 
         {/* 4c: journey, option A, past tense */}
         <Reveal delay={0.1}>
@@ -174,9 +120,7 @@ export default function CaseStudySkydio() {
               I built the controller test suite in the order an operator meets
               the product: unbox and pair, pre-flight, launch, mission,
               interrupt and recover, return and review. Written that way, the
-              gaps between steps are visible. When the suite was later
-              restructured by feature, I measured what it cost: full regression
-              went from about 3.5 weeks to over 4.
+              gaps between steps are visible.
             </p>
           </div>
         </Reveal>
@@ -184,6 +128,11 @@ export default function CaseStudySkydio() {
         <Reveal delay={0.12}>
           <p className="mt-6 text-[0.9rem] text-ink/45">
             Alongside this I lead controller release validation and manage one direct report.
+          </p>
+        </Reveal>
+        <Reveal delay={0.14}>
+          <p className="mt-3 text-[0.9rem] text-ink/45">
+            Two full case studies with real product screens are shared privately: a second camera feed on Controller 2&apos;s large screen, and unifying controller onboarding.
           </p>
         </Reveal>
       </div>

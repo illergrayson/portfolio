@@ -55,7 +55,7 @@ export default function Contact() {
         </Reveal>
         <Reveal delay={0.1}>
           <p className="mt-5 max-w-prose text-lg text-ink/55">
-            Want to talk design? Based in {site.location}. Email is fastest.
+            Based in {site.location}. Email is fastest.
           </p>
         </Reveal>
 

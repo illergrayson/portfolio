@@ -3,13 +3,13 @@ import Reveal from "./Reveal";
 const papers = [
   {
     title: "Pilot-in-the-loop technology for moon landings",
-    venue: "IAF / IAA Space Life Sciences Symposium, 2022",
-    what: "Fatigue analysis and predictive fatigue models on Android, for crews landing on the Moon. Co-author.",
+    venue: "73rd International Astronautical Congress · IAF/IAA Space Life Sciences Symposium, 2022",
+    what: "A multi-sensory cueing system, including haptic cues on the torso, to keep a pilot oriented and ready to take manual control during a lunar landing. Co-author.",
   },
   {
     title: "The Link Between Spatial Disorientation in Flight and Mild Hypoxia",
-    venue: "Reno Aerospace Medicine Convention, 2021",
-    what: "Built and tested VR tools to study how pilots lose orientation when oxygen drops. Co-author.",
+    venue: "Embry-Riddle Student Research Symposium, 2021",
+    what: "Tested whether mild hypoxia makes pilots more prone to spatial disorientation, using a rotating-chair illusion at simulated altitude. Lead presenter.",
   },
 ];
 

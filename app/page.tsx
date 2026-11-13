@@ -12,7 +12,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: site.name,
-  jobTitle: "Product Designer, Human Factors",
+  jobTitle: "Flight Test Engineer Lead",
   address: {
     "@type": "PostalPlace",
     addressLocality: "Redwood City",

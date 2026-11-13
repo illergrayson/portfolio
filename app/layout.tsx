@@ -22,12 +22,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Grayson Iller · Product Design, Human Factors",
   description:
-    "Product designer with a human factors background. Three years validating the Skydio controller in the field, and VUE, a fashion feed designed in Figma and built solo.",
+    "Design portfolio of Grayson Iller. Human factors training, three years on the Skydio controller, and VUE, a fashion feed designed in Figma and built solo.",
   keywords: [
     "Grayson Iller",
     "Product Designer",
-    "Product Designer",
-    "Front-end Engineer",
     "Human Factors",
     "Skydio",
     "VUE",
@@ -38,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Grayson Iller · Product Design, Human Factors",
     description:
-      "Design engineer at the seam of product design and front-end systems. Creator of VUE (vueniverse.com).",
+      "Design portfolio of Grayson Iller. Human factors training, three years on the Skydio controller, and VUE, a fashion feed designed in Figma and built solo.",
     url: siteUrl,
     siteName: "Grayson Iller",
     type: "website",
@@ -47,7 +45,7 @@ export const metadata: Metadata = {
         url: "/og.jpg",
         width: 1200,
         height: 630,
-        alt: "Grayson Iller: design engineer who designs the product and ships the code.",
+        alt: "Grayson Iller: product design and human factors portfolio.",
       },
     ],
   },
@@ -55,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Grayson Iller · Product Design, Human Factors",
     description:
-      "Design engineer at the seam of product design and front-end systems. Creator of VUE.",
+      "Design portfolio of Grayson Iller. Human factors training, three years on the Skydio controller, and VUE, a fashion feed designed in Figma and built solo.",
     images: ["/og.jpg"],
   },
   icons: {
