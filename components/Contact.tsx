@@ -95,16 +95,6 @@ export default function Contact() {
             >
               Say hello
             </a>
-            <a
-              href="/grayson-iller-resume.pdf"
-              download
-              className="group inline-flex items-center gap-2 rounded-full border border-line bg-ink-50 px-5 py-2.5 text-sm text-ink/75 transition-all hover:border-accent/40 hover:text-ink"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              Download r&eacute;sum&eacute;
-            </a>
           </div>
         </Reveal>
       </div>

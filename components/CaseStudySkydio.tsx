@@ -2,49 +2,6 @@ import Reveal from "./Reveal";
 
 const journey = ["Unbox and pair", "Pre-flight", "Launch", "Mission", "Interrupt and recover", "Return and review"];
 
-function Card({ title, caption, children, tag }: { title: string; caption?: string; children?: React.ReactNode; tag?: string }) {
-  return (
-    <div className="surface flex h-full flex-col p-6 sm:p-7">
-      {tag ? <p className="mb-2 text-[10px] uppercase tracking-[0.16em] text-accent">{tag}</p> : null}
-      <h3 className="text-lg font-semibold tracking-tight text-ink">{title}</h3>
-      {children ? <div className="my-5 flex-1">{children}</div> : null}
-      {caption ? <p className="text-[0.9rem] leading-relaxed text-ink/55">{caption}</p> : null}
-    </div>
-  );
-}
-
-function ConnectionDiagram() {
-  const node = (x: number, label: string, sub: string, hot?: boolean) => (
-    <g>
-      <rect x={x} y={34} width={120} height={56} rx={12} fill={hot ? "rgba(194,114,78,0.12)" : "rgba(28,25,23,0.03)"} stroke={hot ? "#C2724E" : "rgba(28,25,23,0.18)"} strokeWidth={hot ? 1.5 : 1} />
-      <text x={x + 60} y={57} textAnchor="middle" fontSize="13" fontWeight="600" fill="#1C1917">{label}</text>
-      <text x={x + 60} y={75} textAnchor="middle" fontSize="11" fill={hot ? "#C2724E" : "rgba(28,25,23,0.5)"}>{sub}</text>
-    </g>
-  );
-  const arrow = (x1: number, x2: number, y: number, label: string, up?: boolean) => (
-    <g>
-      <path d={`M${x1} ${y} C ${x1 + 30} ${y + (up ? -34 : 34)}, ${x2 - 30} ${y + (up ? -34 : 34)}, ${x2} ${y}`} fill="none" stroke="rgba(28,25,23,0.35)" strokeWidth={1.2} markerEnd="url(#a)" />
-      <text x={(x1 + x2) / 2} y={y + (up ? -30 : 40)} textAnchor="middle" fontSize="10.5" fill="rgba(28,25,23,0.55)">{label}</text>
-    </g>
-  );
-  return (
-    <svg viewBox="0 0 420 130" className="w-full" role="img" aria-label="Connection diagram: connected, degraded, lost. The degraded state is highlighted because the screen showed it as connected.">
-      <defs>
-        <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-          <path d="M0 0L10 5L0 10z" fill="rgba(28,25,23,0.35)" />
-        </marker>
-      </defs>
-      {node(10, "Connected", "UI: green")}
-      {node(150, "Degraded", "UI said: green", true)}
-      {node(290, "Lost", "UI: red")}
-      {arrow(130, 150, 46, "link weakens", true)}
-      {arrow(270, 290, 46, "drops", true)}
-      {arrow(150, 130, 82, "recovers")}
-      {arrow(290, 270, 82, "reconnects")}
-    </svg>
-  );
-}
-
 export default function CaseStudySkydio() {
   return (
     <section id="skydio" className="scroll-mt-24 border-t border-line px-6 py-20">
@@ -54,7 +11,7 @@ export default function CaseStudySkydio() {
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="mt-4 max-w-3xl text-[clamp(2rem,5vw,3.4rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-ink">
-            The controller said connected. It wasn&apos;t.
+            Where the screen and the system disagree.
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
@@ -81,28 +38,6 @@ export default function CaseStudySkydio() {
           </div>
         </div>
         <p className="mt-2 text-right text-[12px] text-ink/35">Photos: Skydio</p>
-
-        {/* 4a: connection state */}
-        <div className="mt-12 grid gap-4 lg:grid-cols-2">
-          <Reveal>
-            <Card
-              tag="Case study 1"
-              title="Connection state"
-              caption="The link between controller and drone has more than two states, but parts of the UI only showed two. I found and documented the cases where the screen showed a drone as on or connected when it was off, unpaired, or out of reach. Each one was filed with repro steps and closed. The connection state model itself belongs to the wireless team. My part was showing where the interface didn't reflect it."
-            >
-              <ConnectionDiagram />
-            </Card>
-          </Reveal>
-
-          {/* 4d: warnings under stress */}
-          <Reveal delay={0.05}>
-            <Card
-              tag="Case study 2"
-              title="Warnings under stress"
-              caption="When the controller detects strong radio interference it disables some buttons and warns the pilot. I documented exactly how that alert behaves in flight: when it appears, when it clears, and what happens after it's dismissed. I also raised how often it could fire for operators who work next to radios all day. A warning that cries wolf teaches people to ignore it."
-            />
-          </Reveal>
-        </div>
 
         {/* 4c: journey, option A, past tense */}
         <Reveal delay={0.1}>
@@ -132,7 +67,7 @@ export default function CaseStudySkydio() {
         </Reveal>
         <Reveal delay={0.14}>
           <p className="mt-3 text-[0.9rem] text-ink/45">
-            Two full case studies with real product screens are shared privately: a second camera feed on Controller 2&apos;s large screen, and unifying controller onboarding.
+            Two case studies with real product screens are shared privately with interviewers.
           </p>
         </Reveal>
       </div>

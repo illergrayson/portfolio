@@ -88,9 +88,6 @@ export default function Hero() {
           <a href={site.links.email} className="border-b border-ink/20 pb-0.5 text-sm text-ink/55 hover:border-accent hover:text-ink">
             Email
           </a>
-          <a href="/grayson-iller-resume.pdf" download className="border-b border-ink/20 pb-0.5 text-sm text-ink/55 hover:border-accent hover:text-ink">
-            Résumé (PDF)
-          </a>
         </motion.div>
 
         <motion.figure variants={item} className="mt-14">

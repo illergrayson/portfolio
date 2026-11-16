@@ -2,7 +2,7 @@ import Reveal from "./Reveal";
 
 const stats = [
   { n: "2022", l: "at Skydio since", d: "intern on mobile UI/UX, full-time since 2023" },
-  { n: "129", l: "UI and UX issues filed since 2022", d: "83 closed" },
+  { n: "3", l: "drone platforms validated", d: "S2, X2 and X10" },
   { n: "100+", l: "brands on VUE", d: "designed and built solo" },
   { n: "2", l: "research presentations", d: "lunar landing, spatial disorientation" },
 ];
